@@ -1,1 +1,5 @@
 site_name: My Docs
+nav:
+    - About: index.md
+    - API: api.md
+    - FHIR API: fhir.md
