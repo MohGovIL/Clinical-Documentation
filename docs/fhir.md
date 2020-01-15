@@ -12,7 +12,7 @@
 - [ ] update
 - [ ] delete
 
-###supported parameters
+####supported parameters
 | Name     |      Details   | 
 | ---------- | --------------|
 | id |               | 
@@ -24,7 +24,7 @@
 | birthDate |               | 
 | deceasedBoolean |               | 
 
-###Read
+####Read
 
 **Request:**
 > GET /apis/v4/Patient/:pid
@@ -42,7 +42,7 @@
 - [ ] update
 - [ ] delete
 
-###supported parameters
+####supported parameters
 | Name     |      Details   | 
 | ---------- | --------------|
 | id |               | 
@@ -50,7 +50,7 @@
 | identifier |               | 
 
 
-###Read
+####Read
 
 **Request:**
 > GET /apis/v4/Appointment/:aid
@@ -69,7 +69,7 @@
 - [ ] update
 - [ ] delete
 
-###supported parameters
+####supported parameters
 | Name     |      Details   | 
 | ---------- | --------------|
 | id |               | 
@@ -77,7 +77,58 @@
 | identifier |               | 
 
 
-###Read
+##[practitioner](https://www.hl7.org/fhir/practitioner.html)
 
-**Request:**
-> GET /apis/v4/Encounter/:eid
+- [ ] read
+- [ ] search 
+    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] create
+- [ ] update
+- [ ] delete
+
+####supported parameters
+| Name     |      Details   | 
+| ---------- | --------------|
+| id |               | 
+| resourceType |               | 
+| identifier |               | 
+
+
+
+##[Organization](https://www.hl7.org/fhir/organization.html)
+
+- [ ] read
+- [ ] search 
+    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+    - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
+- [ ] create
+- [ ] update
+- [ ] delete
+
+####supported parameters
+| Name     |      Details   | 
+| ---------- | --------------|
+| id |               | 
+| resourceType |               | 
+| identifier |               | 
+
+
+
+##[HealthcareService](https://www.hl7.org/fhir/organization.html)
+
+- [ ] read
+- [ ] search 
+    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+    - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
+- [ ] create
+- [ ] update
+- [ ] delete
+
+####supported parameters
+| Name     |      Details   | 
+| ---------- | --------------|
+| id |               | 
+| resourceType |               | 
+| identifier |               | 
+
+
