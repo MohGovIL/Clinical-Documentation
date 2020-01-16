@@ -13,16 +13,58 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-| name.family |               | 
-| name.given |               | 
-| gender |               | 
-| birthDate |               | 
-| deceasedBoolean |               | 
+```
+
+  {
+    "id": 1,
+    "resourceType": "Patient",
+    "identifier": [
+      {
+        "value": "3432432"
+      }
+    ],
+    "name": [
+      {
+        "family": "ראשון",
+        "given": [
+          "בדיקה"
+        ]
+      }
+    ],
+    "telecom": [
+      {
+        "system": "email",
+        "value": "amiel@gmail.com"
+      },
+      {
+        "system": "phone",
+        "value": "064525252",
+        "use": "home"
+      },
+      {
+        "system": "phone",
+        "value": "0525112396",
+        "use": "mobile"
+      }
+    ],
+    "gender": "male",
+    "birthDate": "2015-05-04",
+    "deceasedBoolean": 0,
+    "address": [
+      {
+        "use": "both",
+        "line": [
+          "3",
+          "34"
+        ],
+        "city": "city_3000",
+        "postalCode": "4517200",
+        "country": "country_254"
+      }
+    ]
+  }
+```
+
 
 ####Read
 
@@ -43,13 +85,12 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-
-
+````
+{
+    "id": 1,
+    "resourceType": "Appointment",
+}
+````
 ####Read
 
 **Request:**
@@ -70,12 +111,12 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-
+````
+{
+    "id": 1,
+    "resourceType": "Encounter",
+}
+````
 
 ##[practitioner](https://www.hl7.org/fhir/practitioner.html)
 
@@ -87,13 +128,12 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-
-
+````
+{
+    "id": 1,
+    "resourceType": "practitioner",
+}
+````
 
 ##[Organization](https://www.hl7.org/fhir/organization.html)
 
@@ -106,12 +146,12 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-
+````
+{
+    "id": 1,
+    "resourceType": "Organization",
+}
+````
 
 
 ##[HealthcareService](https://www.hl7.org/fhir/organization.html)
@@ -125,10 +165,10 @@
 - [ ] delete
 
 ####supported parameters
-| Name     |      Details   | 
-| ---------- | --------------|
-| id |               | 
-| resourceType |               | 
-| identifier |               | 
-
+````
+{
+    "id": 1,
+    "resourceType": "HealthcareService",
+}
+````
 
