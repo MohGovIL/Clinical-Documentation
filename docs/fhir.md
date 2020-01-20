@@ -6,8 +6,9 @@
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 
 - [x] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search)
+    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
+    - [ ] [:contains and :exact](https://www.hl7.org/fhir/search.html#string) for name and id
 - [ ] create
 - [ ] update
 - [ ] delete
@@ -75,8 +76,9 @@
 ##[Appointment](https://www.hl7.org/fhir/appointment.html)
 
 - [x] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/appointment.html#search)
+    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
+    - [ ] [Range time](https://www.hl7.org/fhir/search.html#date) prefix parameter for range time
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) HealthcareService
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Practitioner
