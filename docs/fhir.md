@@ -140,8 +140,8 @@
 ##[Organization](https://www.hl7.org/fhir/organization.html)
 
 - [ ] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)
+    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
 - [ ] create
 - [ ] update
@@ -159,8 +159,8 @@
 ##[HealthcareService](https://www.hl7.org/fhir/organization.html)
 
 - [ ] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search)
+    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
 - [ ] create
 - [ ] update
