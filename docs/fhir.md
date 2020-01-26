@@ -6,7 +6,7 @@
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search) [active, _id, identifier, name, given, family]
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search) [_id, identifier, given, family]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
     - [ ] [:contains](https://www.hl7.org/fhir/search.html#string) for name and id
 - [ ] create
@@ -103,8 +103,8 @@
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
 - [ ] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
+    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
@@ -137,10 +137,10 @@
 }
 ````
 
-##[Organization](https://www.hl7.org/fhir/organization.html)
+##[Organization](https://www.hl7.org/fhir/organization.html) 
 
 - [ ] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
 - [ ] create
