@@ -6,9 +6,10 @@
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search) [_id, identifier, given, family]
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
-    - [ ] [:contains](https://www.hl7.org/fhir/search.html#string) for name and id
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search)
+    - [x] [Parameters](https://www.hl7.org/fhir/patient.html#search)_id, identifier,name (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
+    - [ ] [:contains and :exact](https://www.hl7.org/fhir/search.html#string) for name and id
+
 - [ ] create
 - [ ] update
 - [ ] delete
@@ -71,6 +72,19 @@
 
 **Request:**
 > GET /apis/v4/Patient/:pid
+
+####search
+
+**Request:**
+
+> GET /apis/v4/Patient
+
+> GET /apis/v4/Patient?_id=1
+
+> GET /apis/v4/Patient?identifier=308826367
+
+> GET /apis/v4/Patient?name=yosi&name=banana
+
 
 
 ##[Appointment](https://www.hl7.org/fhir/appointment.html)
