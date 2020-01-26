@@ -6,9 +6,9 @@
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search) [active, _id, identifier, name, given, family]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
-    - [ ] [:contains and :exact](https://www.hl7.org/fhir/search.html#string) for name and id
+    - [ ] [:contains](https://www.hl7.org/fhir/search.html#string) for name and id
 - [ ] create
 - [ ] update
 - [ ] delete
@@ -159,7 +159,7 @@
 ##[HealthcareService](https://www.hl7.org/fhir/organization.html)
 
 - [ ] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, identifier, service-type, organization, name]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
 - [ ] create
