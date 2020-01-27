@@ -147,8 +147,8 @@ body:[{op:"replace", path:"/status", value:"noshow"}]
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
 - [ ] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [ ] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
+    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
@@ -181,10 +181,10 @@ body:[{op:"replace", path:"/status", value:"noshow"}]
 }
 ````
 
-##[Organization](https://www.hl7.org/fhir/organization.html)
+##[Organization](https://www.hl7.org/fhir/organization.html) 
 
 - [ ] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)
+- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
 - [ ] create
