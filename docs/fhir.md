@@ -77,13 +77,13 @@
 
 **Request:**
 
-> GET /apis/v4/Patient
+> GET /apis/fhir/v4/Patient
 
-> GET /apis/v4/Patient?_id=1
+> GET /apis/fhir/v4/Patient?_id=1
 
-> GET /apis/v4/Patient?identifier=308826367
+> GET /apis/fhir/v4/Patient?identifier=308826367
 
-> GET /apis/v4/Patient?name=yosi&name=banana
+> GET /apis/fhir/v4/Patient?name=yosi&name=banana
 
 
 
@@ -91,26 +91,56 @@
 
 - [x] read
 - [ ] search - [Search Parameters](https://www.hl7.org/fhir/appointment.html#search)
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
-    - [ ] [Range time](https://www.hl7.org/fhir/search.html#date) prefix parameter for range time
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) patient
+    - [X] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
+    - [X] [Range time](https://www.hl7.org/fhir/search.html#date) prefix parameter for range time
+    - [X] [include](https://www.hl7.org/fhir/search.html#include) patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) HealthcareService
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Practitioner
 - [ ] create
-- [ ] update
+- [x] update
+    -[x] update status
 - [ ] delete
 
 ####supported parameters
 ````
 {
-    "id": 1,
-    "resourceType": "Appointment",
+  "id": 8,
+  "resourceType": "Appointment",
+  "status": "pending",
+  "serviceType": [
+    {
+      "coding": [
+        {
+          "code": "17"
+        }
+      ],
+      "text": "ביקור שגרתי - רופא"
+    }
+  ],
+  "description": "ביקור שגרתי - רופא",
+  "start": "2020-01-15T11:00:00.000Z",
+  "end": "2020-01-15T12:00:00.000Z",
+  "minutesDuration": "60",
+  "comment": "יש לי מה להגיד",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/2",
+        "display": "Idan Gigi"
+      }
+    }
+  ]
 }
 ````
 ####Read
 
 **Request:**
-> GET /apis/v4/Appointment/:aid
+> GET /apis/fhir/v4/Appointment/:aid
+
+> GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
+
+> PATCH /apis/fhir/v4/Appointment/:aid  
+body:[{op:"replace", path:"/status", value:"noshow"}]
 
 
 
