@@ -137,11 +137,24 @@
 **Request:**
 > GET /apis/fhir/v4/Appointment/:aid
 
+####Search
+**Request:**
 > GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
 
+####Patch
 > PATCH /apis/fhir/v4/Appointment/:aid  
+
+**Request body:** 
+
+Example - change status
 ```
-body:[{op:"replace", path:"/status", value:"noshow"}]
+[
+   {
+      op:"replace",
+      path:"/status",
+      value:"noshow"
+   }
+]
 ```
 
 
