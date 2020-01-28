@@ -140,8 +140,9 @@
 > GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
 
 > PATCH /apis/fhir/v4/Appointment/:aid  
+```
 body:[{op:"replace", path:"/status", value:"noshow"}]
-
+```
 
 
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
