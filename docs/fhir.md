@@ -189,7 +189,7 @@ Example - change status
 
 ####supported parameters
 ````
-{ 
+{
    "id":4,
    "resourceType":"Practitioner",
    "identifier":[ 
