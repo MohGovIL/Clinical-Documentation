@@ -180,20 +180,46 @@ Example - change status
 
 ##[practitioner](https://www.hl7.org/fhir/practitioner.html)
 
-- [ ] read
-- [ ] search 
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [x] read
+- [x] search 
+    - [x] [simple string search](https://www.hl7.org/fhir/search.html#string)
 - [ ] create
 - [ ] update
 - [ ] delete
 
 ####supported parameters
 ````
-{
-    "id": 1,
-    "resourceType": "practitioner",
+{ 
+   "id":4,
+   "resourceType":"Practitioner",
+   "identifier":[ 
+      { 
+         "value":"039664776"
+      }
+   ],
+   "active":1,
+   "name":[ 
+      { 
+         "family":"yosi",
+         "given":[ 
+            "cohen",
+            "motek"
+         ]
+      }
+   ]
 }
 ````
+
+####Read
+
+**Request:**
+> GET /apis/fhir/v4/Practitioner/:id
+
+
+####search
+
+**Request:**
+> GET /apis/fhir/v4/Practitioner?name=yosi&active=1
 
 ##[Organization](https://www.hl7.org/fhir/organization.html) 
 
