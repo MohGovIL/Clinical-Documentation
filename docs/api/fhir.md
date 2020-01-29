@@ -1,4 +1,4 @@
-#FHIR API
+# FHIR API
 
 <https://www.hl7.org/fhir/http.html>
 
@@ -85,7 +85,11 @@
 
 > GET /apis/fhir/v4/Patient?name=yosi&name=banana
 
+<br><br> 
 
+---
+
+<br><br>  
 
 ##[Appointment](https://www.hl7.org/fhir/appointment.html)
 
@@ -157,6 +161,11 @@ Example - change status
 ]
 ```
 
+<br><br> 
+
+---
+
+<br><br>  
 
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
@@ -178,7 +187,13 @@ Example - change status
 }
 ````
 
-##[practitioner](https://www.hl7.org/fhir/practitioner.html)
+<br><br> 
+
+---
+
+<br><br>  
+
+##[Practitioner](https://www.hl7.org/fhir/practitioner.html)
 
 - [x] read
 - [x] search 
@@ -221,6 +236,12 @@ Example - change status
 **Request:**
 > GET /apis/fhir/v4/Practitioner?name=yosi&active=1
 
+<br><br> 
+
+---
+
+<br><br>  
+
 ##[Organization](https://www.hl7.org/fhir/organization.html) 
 
 - [ ] read
@@ -239,10 +260,15 @@ Example - change status
 }
 ````
 
+<br><br> 
 
-##[HealthcareService](https://www.hl7.org/fhir/organization.html)
+---
 
-- [ ] read
+<br><br>  
+
+## [HealthcareService](https://www.hl7.org/fhir/organization.html)
+
+- [x] read
 - [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, identifier, service-type, organization, name]
     - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
@@ -250,13 +276,81 @@ Example - change status
 - [ ] update
 - [ ] delete
 
-####supported parameters
+<br>
+
+### Supported Parameters:
+
 ````
 {
-    "id": 1,
-    "resourceType": "HealthcareService",
+  "id": 2,
+  "resourceType": "HealthcareService",
+  "active": 1,
+  "providedBy": {
+    "reference": "Organization/3",
+    "display": "Your Clinic Name Here"
+  },
+  "category": [
+    {
+      "coding": [
+        {
+          "code": "30"
+        }
+      ],
+      "text": "Specialist Radiology/Imaging"
+    }
+  ],
+  "type": [
+    {
+      "coding": [
+        {
+          "code": "1"
+        }
+      ],
+      "text": "Ultrasound"
+    }
+  ],
+  "name": "The Ultrasounders Inc.",
+  "comment": "only ultrasounds",
+  "extraDetails": "this can be in markdown",
+  "availableTime": [
+    {
+      "daysOfWeek": [
+        "mon",
+        "tue"
+      ],
+      "allDay": 1
+    },
+    {
+      "daysOfWeek": [
+        "thu",
+        "fri"
+      ],
+      "availableStartTime": "08:30:00",
+      "availableEndTime": "05:30:00"
+    }
+  ],
+  "notAvailable": [
+    {
+      "during": {
+        "start": "2015-12-25T12:03:31.000Z",
+        "end": "2015-12-26T12:03:31.000Z"
+      }
+    },
+    {
+      "during": {
+        "start": "2016-01-01T12:03:31.000Z",
+        "end": "2016-01-01T12:03:31.000Z"
+      }
+    }
+  ],
+  "availabilityExceptions": "Reduced capacity is available during the Christmas period"
 }
 ````
 
+<br>
 
+### Read
 
+```
+GET /apis/fhir/v4/Practitioner/:id
+```

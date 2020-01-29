@@ -1,4 +1,4 @@
-# Clinikal - rest api
+# Clinikal - REST API
 
 
 ##Fhir authorization 
