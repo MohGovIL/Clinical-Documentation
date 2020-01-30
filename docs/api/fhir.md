@@ -169,7 +169,7 @@ Example - change status
 
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
-- [ ] read
+- [x] read
 - [ ] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
     - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
@@ -182,8 +182,38 @@ Example - change status
 ####supported parameters
 ````
 {
-    "id": 1,
-    "resourceType": "Encounter",
+  "resourceType": "Encounter",
+  "meta": {
+    "versionId": 1,
+    "lastUpdated": "",
+    "source": ""
+  },
+  "status": "",
+  "serviceType": {
+    "coding": [
+      {
+        "code": "5"
+      }
+    ]
+  },
+  "participant": [
+    {
+      "individual": {
+        "reference": "/Practitioner/1"
+      }
+    }
+  ],
+  "appointment": [
+    {
+      "reference": "/Appointment/11"
+    }
+  ],
+  "period": {
+    "start": "2020-01-27 00:00:00"
+  },
+  "serviceProvider": {
+    "reference": "/Organization/3"
+  }
 }
 ````
 
