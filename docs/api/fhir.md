@@ -51,10 +51,10 @@
     ],
     "gender": "male",
     "birthDate": "2015-05-04",
-    "deceasedBoolean": 0,
+    "deceasedBoolean": false,
     "address": [
       {
-        "use": "both",
+        "type": "both",
         "line": [
           "3",
           "34"
