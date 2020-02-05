@@ -382,5 +382,5 @@ Example - change status
 ### Read
 
 ```
-GET /apis/fhir/v4/Practitioner/:id
+GET /apis/fhir/v4/HealthcareService/:id
 ```
