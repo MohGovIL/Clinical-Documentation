@@ -10,8 +10,8 @@
     - [x] [Parameters](https://www.hl7.org/fhir/patient.html#search)_id, identifier,name (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
     - [ ] [:contains and :exact](https://www.hl7.org/fhir/search.html#string) for name and id
 
-- [ ] create
-- [ ] update
+- [x] create
+- [X] update
 - [ ] delete
 
 ####supported parameters
@@ -85,6 +85,22 @@
 
 > GET /apis/fhir/v4/Patient?name=yosi&name=banana
 
+
+
+####Create
+
+**Request:**
+> POST /apis/v4/Patient
+
+**body:** fhirPatient
+
+####Update
+
+**Request:**
+> PUT /apis/v4/Patient/:pid
+
+**body:** fhirPatient
+**note:** can not update pid
 <br><br> 
 
 ---
