@@ -299,7 +299,7 @@ Example - change status
 - [ ] delete
 
 ####supported parameters
-`````
+````
 "resourceType":"Organization",
 "id":[4],
 "name":"מחוז אשקלון",
