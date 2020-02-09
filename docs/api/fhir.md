@@ -290,9 +290,9 @@ Example - change status
 
 ##[Organization](https://www.hl7.org/fhir/organization.html) 
 
-- [ ] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
+- [X] read
+- [X] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
+    - [X] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
 - [ ] create
 - [ ] update
@@ -308,9 +308,40 @@ Example - change status
 
 <br><br> 
 
+####Read
+
+**Request:**
+
+> GET /apis/fhir/v4/Organization/:id
+
+
+####search
+
+**Request:**
+
+Basic search
+
+only parameters - active, _id, name from -https://www.hl7.org/fhir/organization.html#search 
+
+Some examples
+
+In this task we implement only AND operator (Each parameter can only be added once)
+
+GET /apis/v4/Organization (all)
+
+GET /apis/v4/Organization?_id=8
+
+GET /apis/v4/Organization?_id=8&active=1
+
+GET /apis/v4/Organization?name=לשכת בריאות חיפה
+
+GET /apis/v4/Organization?name=חיפה&active=1
+
+<br><br> 
+
 ---
 
-<br><br>  
+<br><br> 
 
 ## [HealthcareService](https://www.hl7.org/fhir/organization.html)
 
