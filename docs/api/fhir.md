@@ -18,7 +18,7 @@
 ```
 
   {
-    "id":[4],
+    "id": 1,
     "resourceType": "Patient",
     "identifier": [
       {
@@ -299,17 +299,9 @@ Example - change status
 - [ ] delete
 
 ####supported parameters
-````
-{
-    "id": 1,
-    "resourceType": "Organization",
-}
-````
-
-````
-{
+`````
 "resourceType":"Organization",
-"identifier":[{"value":"4"}],
+"id":[4],
 "name":"מחוז אשקלון",
 "alias":[null],
 "telecom":[
@@ -329,7 +321,6 @@ Example - change status
                 "city":"חיפה","state":"32"}
           ]
 }
-
 ````
 
 <br><br> 
