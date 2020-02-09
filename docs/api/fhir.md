@@ -18,7 +18,7 @@
 ```
 
   {
-    "id": 1,
+    "id":[4],
     "resourceType": "Patient",
     "identifier": [
       {
