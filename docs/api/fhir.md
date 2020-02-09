@@ -302,7 +302,7 @@ Example - change status
 ````
 {
 "resourceType":"Organization",
-"id":[4],
+"id":4
 "name":"מחוז אשקלון",
 "alias":[null],
 "telecom":[
