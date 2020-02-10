@@ -311,26 +311,32 @@ GET /apis/v4/HealthcareService?appointment=5&patient=78
 ####supported parameters
 ````
 {
-"resourceType":"Organization",
-"id":4
-"name":"מחוז אשקלון",
-"alias":[null],
-"telecom":[
-            {
-                "system":"fax",
-                "value":"+972-546-837-767"
-            },
-            {
-                "system":"phone",
-                "value":"+972-546-837-766","use":
-                "work"
-            }
-        ],
-"address":[
-            {
-                "line":["שד הפלי\"ם 15א"],
-                "city":"חיפה","state":"32"}
-          ]
+   "resourceType":"Organization",
+   "id":4,
+   "name":"מחוז אשקלון",
+   "alias":[
+      null
+   ],
+   "telecom":[
+      {
+         "system":"fax",
+         "value":"+972-546-837-767"
+      },
+      {
+         "system":"phone",
+         "value":"+972-546-837-766",
+         "use":"work"
+      }
+   ],
+   "address":[
+      {
+         "line":[
+            "שד הפלי\"ם 15א"
+         ],
+         "city":"חיפה",
+         "state":"32"
+      }
+   ]
 }
 ````
 
