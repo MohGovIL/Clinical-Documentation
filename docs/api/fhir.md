@@ -124,29 +124,52 @@
 ####supported parameters
 ````
 {
-  "id": 8,
+  "id": 4,
   "resourceType": "Appointment",
-  "status": "pending",
+  "status": "noshow",
   "serviceType": [
     {
       "coding": [
         {
-          "code": "17"
+          "code": "3"
         }
       ],
-      "text": "ביקור שגרתי - רופא"
+      "text": "X-ray"
     }
   ],
-  "description": "ביקור שגרתי - רופא",
-  "start": "2020-01-15T11:00:00.000Z",
-  "end": "2020-01-15T12:00:00.000Z",
-  "minutesDuration": "60",
-  "comment": "יש לי מה להגיד",
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "1"
+        }
+      ],
+      "text": "shoulder"
+    },
+    {
+      "coding": [
+        {
+          "code": "2"
+        }
+      ],
+      "text": "ankle"
+    }
+  ],
+  "priority": "1",
+  "description": "זה תיאור מגניב",
+  "start": "2020-01-28T09:15:00.000Z",
+  "end": "2020-01-28T09:30:00.000Z",
+  "minutesDuration": "15",
+  "comment": "66666666666",
   "participant": [
     {
       "actor": {
-        "reference": "Patient/2",
-        "display": "Idan Gigi"
+        "reference": "Patient/1"
+      }
+    },
+    {
+      "actor": {
+        "reference": "HealthcareService/2"
       }
     }
   ]
