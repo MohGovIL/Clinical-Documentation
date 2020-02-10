@@ -209,14 +209,24 @@ Example - change status
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
 - [x] read
-- [ ] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
+- [x] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
+    - [x] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
 - [ ] create
 - [ ] update
 - [ ] delete
+
+GET /apis/v4/Encounter/1 
+
+GET /apis/v4/Encounter (all)
+
+GET /apis/v4/Encounter?_id=8
+
+GET /apis/v4/Encounter?_id=8&status=planned&status=in progress  (or operator)
+
+GET /apis/v4/HealthcareService?appointment=5&patient=78
 
 ####supported parameters
 ````
@@ -313,9 +323,9 @@ Example - change status
 
 ##[Organization](https://www.hl7.org/fhir/organization.html) 
 
-- [ ] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
+- [X] read
+- [X] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
+    - [X] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
 - [ ] create
 - [ ] update
@@ -324,16 +334,71 @@ Example - change status
 ####supported parameters
 ````
 {
-    "id": 1,
-    "resourceType": "Organization",
+   "resourceType":"Organization",
+   "id":4,
+   "name":"מחוז אשקלון",
+   "alias":[
+      null
+   ],
+   "telecom":[
+      {
+         "system":"fax",
+         "value":"+972-546-837-767"
+      },
+      {
+         "system":"phone",
+         "value":"+972-546-837-766",
+         "use":"work"
+      }
+   ],
+   "address":[
+      {
+         "line":[
+            "שד הפלי\"ם 15א"
+         ],
+         "city":"חיפה",
+         "state":"32"
+      }
+   ]
 }
 ````
 
 <br><br> 
 
+####Read
+
+**Request:**
+
+> GET /apis/fhir/v4/Organization/:id
+
+
+####search
+
+**Request:**
+
+Basic search
+
+only parameters - active, _id, name from -https://www.hl7.org/fhir/organization.html#search 
+
+Some examples
+
+In this task we implement only AND operator (Each parameter can only be added once)
+
+GET /apis/v4/Organization (all)
+
+GET /apis/v4/Organization?_id=8
+
+GET /apis/v4/Organization?_id=8&active=1
+
+GET /apis/v4/Organization?name=לשכת בריאות חיפה
+
+GET /apis/v4/Organization?name=חיפה&active=1
+
+<br><br> 
+
 ---
 
-<br><br>  
+<br><br> 
 
 ## [HealthcareService](https://www.hl7.org/fhir/organization.html)
 
