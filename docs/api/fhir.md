@@ -186,14 +186,24 @@ Example - change status
 ##[Encounter](https://www.hl7.org/fhir/encounter.html)
 
 - [x] read
-- [ ] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
-    - [ ] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
+- [x] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
+    - [x] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
 - [ ] create
 - [ ] update
 - [ ] delete
+
+GET /apis/v4/Encounter/1 
+
+GET /apis/v4/Encounter (all)
+
+GET /apis/v4/Encounter?_id=8
+
+GET /apis/v4/Encounter?_id=8&status=planned&status=in progress  (or operator)
+
+GET /apis/v4/HealthcareService?appointment=5&patient=78
 
 ####supported parameters
 ````
