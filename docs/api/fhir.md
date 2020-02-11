@@ -403,8 +403,8 @@ GET /apis/v4/Organization?name=חיפה&active=1
 ## [HealthcareService](https://www.hl7.org/fhir/organization.html)
 
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, identifier, service-type, organization, name]
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
+- [x] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, service-type, organization, name]
+    - [x] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
 - [ ] create
 - [ ] update
@@ -485,6 +485,22 @@ GET /apis/v4/Organization?name=חיפה&active=1
 
 ### Read
 
-```
-GET /apis/fhir/v4/HealthcareService/:id
-```
+> GET /apis/fhir/v4/HealthcareService/:id
+
+<br>
+<br>
+
+### Search
+
+Example showing how to use parameters:  
+
+> GET /apis/fhir/v4/HealthcareService?_id=3&name=ClintonServices
+
+
+Parameter|Database Table|Database Column\s|Note
+--|--|--|--
+_id|fhir_healthcare_services|id|
+active|fhir_healthcare_services|active|
+name|fhir_healthcare_services|name|
+organization|fhir_healthcare_services|providedBy|
+service-type|fhir_healthcare_services|type|
