@@ -184,6 +184,26 @@
 **Request:**
 > GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
 
+**params examples**
+
+*date=2020-01-28*
+
+*date=ge2020-01-28*
+
+*date=le2020-01-28*
+
+*status:not=arrived*
+
+*actor:HealthcareService.organization=3*
+
+*service-type=5*
+
+*_include=Appointment:patient*
+
+*_sort=date,-priority,service-type*
+
+*_sort=date*
+
 ####Patch
 > PATCH /apis/fhir/v4/Appointment/:aid  
 
