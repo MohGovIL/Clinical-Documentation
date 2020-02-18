@@ -189,7 +189,7 @@ Example - change status
 - [x] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
     - [x] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
+    - [x] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
 - [ ] create
 - [ ] update
@@ -244,7 +244,114 @@ GET /apis/v4/HealthcareService?appointment=5&patient=78
 ````
 
 <br><br> 
+```
+/apis/fhir/v4/Encounter
 
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_id=8&status=planned&status=in_progress
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?appointment=2&patient=3
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}/apis/fhir/v4/Encounter/1{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}}
+
+ 
+
+/apis/fhir/v4/Encounter?date=gt2020-02-09
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_id=1
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?date=eq2020-02-09
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?appointment=1&patient=2
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?date=eq2020-02-09
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_include=Encounter:patient
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}},{"resource":{"id":1,"resourceType":"Patient","identifier":[{"value":"45640"}],"name":[{"family":"דג","given":["דגי"]}],"gender":"male","birthDate":"2020-01-01","deceasedBoolean":false},"search":{"mode":""}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_sort=-date,patient
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_sort=date
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+/apis/fhir/v4/Encounter?_sort=date,-priority,service-type
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Encounter?_sort=-date
+
+ 
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Organization?_id=3&active=1
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":3,"resourceType":"Organization","name":"Your Clinic Name Here","telecom":[{"system":"phone","value":"035519966","use":"work"}]},"search":{"mode":"match"}}]}
+
+ 
+
+/apis/fhir/v4/Organization
+
+{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":2,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":3,"resourceType":"Organization","name":"Your Clinic Name Here","telecom":[{"system":"phone","value":"035519966","use":"work"}]},"search":{"mode":"match"}},{"resource":{"id":4,"resourceType":"Organization","name":"מחוז אשקלון","telecom":[{"system":"fax","value":"+972-546-837-767"},{"system":"phone","value":"+972-546-837-766","use":"work"}],"address":[{"line":["שד הפלי\"ם 15א"],"city":"חיפה","state":"32"}]},"search":{"mode":"match"}}]}
+
+
+
+```
 ---
 
 <br><br>  
