@@ -124,29 +124,52 @@
 ####supported parameters
 ````
 {
-  "id": 8,
+  "id": 4,
   "resourceType": "Appointment",
-  "status": "pending",
+  "status": "noshow",
   "serviceType": [
     {
       "coding": [
         {
-          "code": "17"
+          "code": "3"
         }
       ],
-      "text": "ביקור שגרתי - רופא"
+      "text": "X-ray"
     }
   ],
-  "description": "ביקור שגרתי - רופא",
-  "start": "2020-01-15T11:00:00.000Z",
-  "end": "2020-01-15T12:00:00.000Z",
-  "minutesDuration": "60",
-  "comment": "יש לי מה להגיד",
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "1"
+        }
+      ],
+      "text": "shoulder"
+    },
+    {
+      "coding": [
+        {
+          "code": "2"
+        }
+      ],
+      "text": "ankle"
+    }
+  ],
+  "priority": "1",
+  "description": "זה תיאור מגניב",
+  "start": "2020-01-28T09:15:00.000Z",
+  "end": "2020-01-28T09:30:00.000Z",
+  "minutesDuration": "15",
+  "comment": "66666666666",
   "participant": [
     {
       "actor": {
-        "reference": "Patient/2",
-        "display": "Idan Gigi"
+        "reference": "Patient/1"
+      }
+    },
+    {
+      "actor": {
+        "reference": "HealthcareService/2"
       }
     }
   ]
@@ -160,6 +183,26 @@
 ####Search
 **Request:**
 > GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
+
+**params examples**
+
+*date=2020-01-28*
+
+*date=ge2020-01-28*
+
+*date=le2020-01-28*
+
+*status:not=arrived*
+
+*actor:HealthcareService.organization=3*
+
+*service-type=5*
+
+*_include=Appointment:patient*
+
+*_sort=date,-priority,service-type*
+
+*_sort=date*
 
 ####Patch
 > PATCH /apis/fhir/v4/Appointment/:aid  
@@ -487,8 +530,8 @@ GET /apis/v4/Organization?name=חיפה&active=1
 ## [HealthcareService](https://www.hl7.org/fhir/organization.html)
 
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, identifier, service-type, organization, name]
-    - [ ] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
+- [x] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, service-type, organization, name]
+    - [x] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
     - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
 - [ ] create
 - [ ] update
@@ -569,6 +612,22 @@ GET /apis/v4/Organization?name=חיפה&active=1
 
 ### Read
 
-```
-GET /apis/fhir/v4/HealthcareService/:id
-```
+> GET /apis/fhir/v4/HealthcareService/:id
+
+<br>
+<br>
+
+### Search
+
+Example showing how to use parameters:  
+
+> GET /apis/fhir/v4/HealthcareService?_id=3&name=ClintonServices
+
+
+Parameter|Database Table|Database Column\s|Note
+--|--|--|--
+_id|fhir_healthcare_services|id|
+active|fhir_healthcare_services|active|
+name|fhir_healthcare_services|name|
+organization|fhir_healthcare_services|providedBy|
+service-type|fhir_healthcare_services|type|
