@@ -107,6 +107,33 @@
 
 <br><br>  
 
+####Patch
+> PATCH /apis/fhir/v4/Appointment/:aid  
+
+**Request body:** 
+
+Example - change status
+```
+[
+    {op:"replace", path:"/id", value:"1"},
+    {op:"replace", path:"/identifier/0/value", value:"3432432"},
+    {op:"replace", path:"/name/0/family", value:"family"},
+    {op:"replace", path:"/name/0/given", value:["lname","mname"]},
+    {op:"replace", path:"/telecom/0", value:{system: "phone",value: "064525252",use: "home" } } ,
+    {op:"replace", path:"/telecom/1", value:{system: "email",value: "amiel@gmail.com" } } ,
+    {op:"replace", path:"/telecom/2", value:{system: "phone",value: "0525112396",use: "mobile" } } ,
+    {op:"replace", path:"/gender", value:"male"},
+    {op:"replace", path:"/birthDate", value:"1993-05-04" },
+    {op:"replace", path:"/deceasedBoolean", value:"true" },
+    {op:"replace", path:"/deceasedDateTime", value: "2020-01-04" },
+    {op:"replace", path:"/address/0", value:{type:"both",city:"city_3000",postalCode:"4517200",country:"country_254"} },
+    {op:"replace", path:"/address/0/line", value:["street_200","3","34"] }
+]
+```
+
+<br><br> 
+
+
 ##[Appointment](https://www.hl7.org/fhir/appointment.html)
 
 - [x] read
