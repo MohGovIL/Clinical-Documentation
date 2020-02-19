@@ -232,6 +232,29 @@ Example - change status
 
 *_sort=date*
 
+*_id=5*
+
+*_summary=count*
+
+```
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "timestamp": "2020-02-19T15:54:27.000Z",
+  "total": 9,
+  "entry": [
+    {
+      "response": {
+        "status": "200",
+        "outcome": {
+          "resourceType": "OperationOutcome"
+        }
+      }
+    }
+  ]
+}
+```
+
 ####Patch
 > PATCH /apis/fhir/v4/Appointment/:aid  
 
