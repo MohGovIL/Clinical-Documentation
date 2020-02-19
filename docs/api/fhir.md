@@ -13,6 +13,7 @@
 - [x] create
 - [X] update
 - [ ] delete
+- [X] patch only replace
 
 ####supported parameters
 ```
