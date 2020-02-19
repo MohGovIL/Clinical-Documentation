@@ -631,3 +631,55 @@ active|fhir_healthcare_services|active|
 name|fhir_healthcare_services|name|
 organization|fhir_healthcare_services|providedBy|
 service-type|fhir_healthcare_services|type|
+
+<br><br> 
+
+---
+
+<br><br> 
+
+## [ValueSet](https://www.hl7.org/fhir/valueset.html)
+
+- [x] read
+    - [x] [expand operator](http://hl7.org/fhir/valueset-operation-expand.html)  
+- [ ] search
+<br>
+
+### Supported Parameters:
+
+````
+{
+  "id": "reason_codes_5",
+  "resourceType": "ValueSet",
+  "title": "MRI Reason Codes",
+  "status": "active",
+  "expansion": {
+      "timestamp": "2020-02-19 06:07:24T18:07:24.000Z",
+      "contains": [
+          {
+              "system": "clinikal_reason_codes",
+              "code": "18",
+              "display": "Backbone"
+          },
+          {
+              "system": "clinikal_reason_codes",
+              "code": "19",
+              "display": "Brain"
+          }
+      ]
+  }
+}
+````
+
+<br>
+
+### Read
+
+> GET /apis/fhir/v4/ValueSet/:id
+
+> GET /apis/fhir/v4/ValueSet/:id/$expand
+
+Values for **:id** parameter can be found in the **fhir_value_sets** database table under the **id** column.  
+
+
+<br><br>
