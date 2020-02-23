@@ -509,7 +509,7 @@ Search requests:
 
 <br><br> 
 
-## [HealthcareService](https://www.hl7.org/fhir/organization.html)
+## [HealthcareService](https://www.hl7.org/fhir/healthcareservice.html)
 
 ### Supported Requests
 - [x] read
