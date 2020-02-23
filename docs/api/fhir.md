@@ -2,20 +2,21 @@
 
 <https://www.hl7.org/fhir/http.html>
 
+<br><br><br>
 
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 
+### Supported Requests
 - [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/patient.html#search)
-    - [x] [Parameters](https://www.hl7.org/fhir/patient.html#search)_id, identifier,name (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
-    - [ ] [:contains and :exact](https://www.hl7.org/fhir/search.html#string) for name and id
-
+- [ ] search
 - [x] create
-- [X] update
+- [x] update
 - [ ] delete
-- [X] patch only replace
+- [x] patch (only replace)
 
-####supported parameters
+<br>
+
+### Supported Resource Properties
 ```
 
   {
@@ -67,53 +68,49 @@
     ]
   }
 ```
+<br>
 
+### Supported Operators
 
-####Read
+None
 
-**Request:**
-> GET /apis/v4/Patient/:pid
+<br>
 
-####search
+### Supported General Parameters
 
-**Request:**
+Parameter|Valid Values
+--|--
 
-> GET /apis/fhir/v4/Patient
+<br>
 
-> GET /apis/fhir/v4/Patient?_id=1
+### Supported Search Parameters
 
-> GET /apis/fhir/v4/Patient?identifier=308826367
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact, contains|
+identifier|||
+name||exact, contains|
 
-> GET /apis/fhir/v4/Patient?name=yosi&name=banana
+<br>
 
+### Examples
+Read request:  
+`GET /apis/v4/Patient/:pid`
 
+Search requests:  
+`GET /apis/fhir/v4/Patient`  
+`GET /apis/fhir/v4/Patient?_id=1`  
+`GET /apis/fhir/v4/Patient?identifier=308826367`  
+`GET /apis/fhir/v4/Patient?name=yosi&name=banana`  
 
-####Create
+Create request:  
+`POST /apis/v4/Patient`  
 
-**Request:**
-> POST /apis/v4/Patient
+Update request:  
+`PUT /apis/v4/Patient/:pid`  
 
-**body:** fhirPatient
-
-####Update
-
-**Request:**
-> PUT /apis/v4/Patient/:pid
-
-**body:** fhirPatient
-**note:** can not update pid
-<br><br> 
-
----
-
-<br><br>  
-
-####Patch
-> PATCH /apis/fhir/v4/Appointment/:aid  
-
-**Request body:** 
-
-Example - change status
+Patch request:  
+`PATCH /apis/fhir/v4/Patient/:pid`  
 ```
 [
     {op:"replace", path:"/id", value:"1"},
@@ -134,22 +131,22 @@ Example - change status
 
 <br><br> 
 
+---
 
-##[Appointment](https://www.hl7.org/fhir/appointment.html)
+<br><br>
 
-- [x] read
-- [ ] search - [Search Parameters](https://www.hl7.org/fhir/appointment.html#search)
-    - [X] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix))
-    - [X] [Range time](https://www.hl7.org/fhir/search.html#date) prefix parameter for range time
-    - [X] [include](https://www.hl7.org/fhir/search.html#include) patient
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) HealthcareService
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) Practitioner
-- [ ] create
-- [x] update
-    -[x] update status
+## [Appointment](https://www.hl7.org/fhir/appointment.html)
+
+### Supported Requests
+- [x] read  
+- [ ] search  
+- [ ] create  
+- [x] update  
 - [ ] delete
 
-####supported parameters
+<br>
+
+### Supported Resource Properties
 ````
 {
   "id": 4,
@@ -203,73 +200,42 @@ Example - change status
   ]
 }
 ````
-####Read
 
-**Request:**
-> GET /apis/fhir/v4/Appointment/:aid
+<br>
 
-####Search
-**Request:**
-> GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient
+### Supported Operators
 
-**params examples**
+None
 
-*date=2020-01-28*
+<br>
+### Supported General Parameters
 
-*date=ge2020-01-28*
+Parameter|Valid Values
+--|--
+_include|Appointment:patient
+_sort|date, priority, service-type **
+_summary|count
 
-*date=le2020-01-28*
+** Can be used separately or combined together using paranthesis
 
-*status:not=arrived*
+<br>
 
-*actor:HealthcareService.organization=3*
+### Supported Search Parameters
 
-*service-type=5*
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||||
+date|eq, ge, le||
+status||not|
+actor:HealthcareService.organization|||
+service-type|||
 
-*_include=Appointment:patient*
+<br>
 
-*_sort=date,-priority,service-type*
+### Examples
+Search request:  
+`GET /apis/fhir/v4/Appointment?date=ge2019-01-16&date=le2020-01-30&_include=Appointment:patient`
 
-*_sort=date*
-
-*_id=5*
-
-*_summary=count*
-
-```
-{
-  "resourceType": "Bundle",
-  "type": "searchset",
-  "timestamp": "2020-02-19T15:54:27.000Z",
-  "total": 9,
-  "entry": [
-    {
-      "response": {
-        "status": "200",
-        "outcome": {
-          "resourceType": "OperationOutcome"
-        }
-      }
-    }
-  ]
-}
-```
-
-####Patch
-> PATCH /apis/fhir/v4/Appointment/:aid  
-
-**Request body:** 
-
-Example - change status
-```
-[
-   {
-      op:"replace",
-      path:"/status",
-      value:"noshow"
-   }
-]
-```
 
 <br><br> 
 
@@ -277,189 +243,125 @@ Example - change status
 
 <br><br>  
 
-##[Encounter](https://www.hl7.org/fhir/encounter.html)
+## [Encounter](https://www.hl7.org/fhir/encounter.html)
 
+### Supported Requests
 - [x] read
-- [x] search [Search Parameters](https://www.hl7.org/fhir/encounter.html#search)
-    - [x] [simple string search](https://www.hl7.org/fhir/search.html#string) [_id, date,status,appointment,patient]
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) appointment
-    - [x] [include](https://www.hl7.org/fhir/search.html#include) subject.patient
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) participant.practitioner
+- [x] search
 - [ ] create
 - [ ] update
 - [ ] delete
 
-GET /apis/v4/Encounter/1 
+<br>
 
-GET /apis/v4/Encounter (all)
-
-GET /apis/v4/Encounter?_id=8
-
-GET /apis/v4/Encounter?_id=8&status=planned&status=in progress  (or operator)
-
-GET /apis/v4/HealthcareService?appointment=5&patient=78
-
-####supported parameters
+### Supported Resource Properties
 ````
 {
+  "id": "1",
   "resourceType": "Encounter",
-  "meta": {
-    "versionId": 1,
-    "lastUpdated": "",
-    "source": ""
-  },
-  "status": "",
-  "serviceType": {
+  "status": "no",
+  "priority": {
     "coding": [
       {
-        "code": "5"
+        "code": "1"
       }
     ]
+  },
+  "subject": {
+    "reference": "Patient/1"
   },
   "participant": [
     {
       "individual": {
-        "reference": "/Practitioner/1"
+        "reference": "Practitioner/1"
       }
     }
   ],
   "appointment": [
     {
-      "reference": "/Appointment/11"
+      "reference": "Appointment/1"
     }
   ],
   "period": {
-    "start": "2020-01-27 00:00:00"
+    "start": "2020-02-17 00:00:00"
   },
+  "reasonCode": [
+    {
+      "coding": [
+        {
+          "code": "1"
+        }
+      ],
+      "text": "Shoulder"
+    }
+  ],
   "serviceProvider": {
-    "reference": "/Organization/3"
+    "reference": "Organization/3"
   }
 }
 ````
 
-<br><br> 
-```
-/apis/fhir/v4/Encounter
+<br>
 
- 
+### Supported Operators
 
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+None
 
- 
+<br>
 
-/apis/fhir/v4/Encounter?_id=8&status=planned&status=in_progress
+### Supported General Parameters
 
- 
+Parameter|Valid Values
+--|--
+_include|Encounter:patient
+_sort|date, priority, service-type **
+_summary|count
 
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}
+** Can be used separately or combined together using paranthesis
 
- 
+<br>
 
-/apis/fhir/v4/Encounter?appointment=2&patient=3
+### Supported Search Parameters
 
- 
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||||
+date|eq, ge, le||
+status|||V
+appointment|||
+patient|||
 
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}/apis/fhir/v4/Encounter/1{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}}
+<br>
 
- 
+### Examples
 
-/apis/fhir/v4/Encounter?date=gt2020-02-09
+Search request:  
+`GET /apis/v4/Encounter/1`  
+`GET /apis/v4/Encounter (all)`  
+`GET /apis/v4/Encounter?_id=8`  
+`GET /apis/v4/Encounter?_id=8&status=planned&status=in progress (or operator)`  
+`GET /apis/v4/HealthcareService?appointment=5&patient=78`  
+`GET /apis/fhir/v4/Encounter?date=gt2020-02-09`  
 
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
+<br><br>  
 
- 
-
-/apis/fhir/v4/Encounter?_id=1
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?date=eq2020-02-09
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?appointment=1&patient=2
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":0,"resourceType":"Encounter","status":null,"priority":{"coding":[[]]},"period":[]},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?date=eq2020-02-09
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?_include=Encounter:patient
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}},{"resource":{"id":1,"resourceType":"Patient","identifier":[{"value":"45640"}],"name":[{"family":"דג","given":["דגי"]}],"gender":"male","birthDate":"2020-01-01","deceasedBoolean":false},"search":{"mode":""}}]}
-
- 
-
-/apis/fhir/v4/Encounter?_sort=-date,patient
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?_sort=date
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:52.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
-/apis/fhir/v4/Encounter?_sort=date,-priority,service-type
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Encounter?_sort=-date
-
- 
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":1,"resourceType":"Encounter","status":"planned","priority":{"coding":[{"code":"2"}]},"subject":{"reference":"Patient/1"},"participant":[{"individual":{"reference":"Practitioner/1"}}],"period":{"start":"2020-02-09 00:00:00"},"serviceProvider":{"reference":"Organization/4"}},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Organization?_id=3&active=1
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":1,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":3,"resourceType":"Organization","name":"Your Clinic Name Here","telecom":[{"system":"phone","value":"035519966","use":"work"}]},"search":{"mode":"match"}}]}
-
- 
-
-/apis/fhir/v4/Organization
-
-{"resourceType":"Bundle","type":"searchset","timestamp":"2020-02-18T10:20:53.000Z","total":2,"entry":[{"response":{"status":"200","outcome":{"resourceType":"OperationOutcome"}}},{"resource":{"id":3,"resourceType":"Organization","name":"Your Clinic Name Here","telecom":[{"system":"phone","value":"035519966","use":"work"}]},"search":{"mode":"match"}},{"resource":{"id":4,"resourceType":"Organization","name":"מחוז אשקלון","telecom":[{"system":"fax","value":"+972-546-837-767"},{"system":"phone","value":"+972-546-837-766","use":"work"}],"address":[{"line":["שד הפלי\"ם 15א"],"city":"חיפה","state":"32"}]},"search":{"mode":"match"}}]}
-
-
-
-```
 ---
 
 <br><br>  
 
-##[Practitioner](https://www.hl7.org/fhir/practitioner.html)
+## [Practitioner](https://www.hl7.org/fhir/practitioner.html)
+
+### Supported Requests
 
 - [x] read
-- [x] search 
-    - [x] [simple string search](https://www.hl7.org/fhir/search.html#string)
+- [x] search
 - [ ] create
 - [ ] update
 - [ ] delete
 
-####supported parameters
+<br>
+
+### Supported Resource Properties
 ````
 {
    "id":4,
@@ -482,16 +384,39 @@ GET /apis/v4/HealthcareService?appointment=5&patient=78
 }
 ````
 
-####Read
+<br>
 
-**Request:**
-> GET /apis/fhir/v4/Practitioner/:id
+### Supported Operators
 
+None
 
-####search
+<br>
 
-**Request:**
-> GET /apis/fhir/v4/Practitioner?name=yosi&active=1
+### Supported General Parameters
+
+Parameter|Valid Values
+--|--
+
+<br>
+
+### Supported Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id|||
+name**|||
+active|||
+
+** Value comes from "family" or "given"
+
+<br>
+
+### Examples
+Read request:  
+`GET /apis/fhir/v4/Practitioner/:id`  
+
+Search requests:  
+`GET /apis/fhir/v4/Practitioner?name=yosi&active=1`  
 
 <br><br> 
 
@@ -499,17 +424,18 @@ GET /apis/v4/HealthcareService?appointment=5&patient=78
 
 <br><br>  
 
-##[Organization](https://www.hl7.org/fhir/organization.html) 
+## [Organization](https://www.hl7.org/fhir/organization.html) 
 
+### Supported Requests
 - [X] read
-- [X] search - [Search Parameters](https://www.hl7.org/fhir/organization.html#search)  [active, _id, name]
-    - [X] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (part of)
+- [X] search
 - [ ] create
 - [ ] update
 - [ ] delete
 
-####supported parameters
+<br>
+
+### Supported Resource Properties
 ````
 {
    "resourceType":"Organization",
@@ -541,36 +467,41 @@ GET /apis/v4/HealthcareService?appointment=5&patient=78
 }
 ````
 
-<br><br> 
+<br>
 
-####Read
+### Supported Operators
 
-**Request:**
+None
 
-> GET /apis/fhir/v4/Organization/:id
+<br>
 
+### Supported General Parameters
 
-####search
+Parameter|Valid Values
+--|--
 
-**Request:**
+<br>
 
-Basic search
+### Supported Search Parameters
 
-only parameters - active, _id, name from -https://www.hl7.org/fhir/organization.html#search 
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id|||
+name|||
+active|||
 
-Some examples
+<br>
 
-In this task we implement only AND operator (Each parameter can only be added once)
+### Examples
+Read request:  
+`GET /apis/fhir/v4/Organization/:id`  
 
-GET /apis/v4/Organization (all)
-
-GET /apis/v4/Organization?_id=8
-
-GET /apis/v4/Organization?_id=8&active=1
-
-GET /apis/v4/Organization?name=לשכת בריאות חיפה
-
-GET /apis/v4/Organization?name=חיפה&active=1
+Search requests:  
+`GET /apis/v4/Organization (all)`  
+`GET /apis/v4/Organization?_id=8`  
+`GET /apis/v4/Organization?_id=8&active=1`  
+`GET /apis/v4/Organization?name=לשכת בריאות חיפה`  
+`GET /apis/v4/Organization?name=חיפה&active=1`  
 
 <br><br> 
 
@@ -580,17 +511,16 @@ GET /apis/v4/Organization?name=חיפה&active=1
 
 ## [HealthcareService](https://www.hl7.org/fhir/organization.html)
 
+### Supported Requests
 - [x] read
-- [x] search - [Search Parameters](https://www.hl7.org/fhir/healthcareservice.html#search) [active, _id, service-type, organization, name]
-    - [x] [Basic](https://www.hl7.org/fhir/search.html#string) (without [modifiers](https://www.hl7.org/fhir/search.html#modifiers) and [prefix](https://www.hl7.org/fhir/search.html#prefix)) 
-    - [ ] [include](https://www.hl7.org/fhir/search.html#include) Organization (providedBy)
+- [x] search
 - [ ] create
 - [ ] update
 - [ ] delete
 
 <br>
 
-### Supported Parameters:
+### Supported Resource Properties:
 
 ````
 {
@@ -661,27 +591,34 @@ GET /apis/v4/Organization?name=חיפה&active=1
 
 <br>
 
-### Read
+### Supported Operators
 
-> GET /apis/fhir/v4/HealthcareService/:id
+None
 
 <br>
+
+### Supported General Parameters
+
+Parameter|Valid Values
+--|--
+
 <br>
 
-### Search
+### Supported Search Parameters
 
-Example showing how to use parameters:  
-
-> GET /apis/fhir/v4/HealthcareService?_id=3&name=ClintonServices
-
-
-Parameter|Database Table|Database Column\s|Note
+Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
-_id|fhir_healthcare_services|id|
-active|fhir_healthcare_services|active|
-name|fhir_healthcare_services|name|
-organization|fhir_healthcare_services|providedBy|
-service-type|fhir_healthcare_services|type|
+_id|||
+active|||
+name|||
+organization|||
+service-type|||
+
+<br>
+
+### Examples
+Read request:  
+`GET /apis/fhir/v4/HealthcareService/:id`
 
 <br><br> 
 
@@ -691,12 +628,13 @@ service-type|fhir_healthcare_services|type|
 
 ## [ValueSet](https://www.hl7.org/fhir/valueset.html)
 
+### Supported Requests
 - [x] read
-    - [x] [expand operator](http://hl7.org/fhir/valueset-operation-expand.html)  
 - [ ] search
+
 <br>
 
-### Supported Parameters:
+### Supported Resource Properties:
 
 ````
 {
@@ -724,13 +662,28 @@ service-type|fhir_healthcare_services|type|
 
 <br>
 
-### Read
+### Supported Operators
 
-> GET /apis/fhir/v4/ValueSet/:id
+* $expand
 
-> GET /apis/fhir/v4/ValueSet/:id/$expand
+<br>
 
-Values for **:id** parameter can be found in the **fhir_value_sets** database table under the **id** column.  
+### Supported General Parameters
 
+Parameter|Valid Values
+--|--
+
+<br>
+
+### Supported Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+
+<br>
+
+### Examples
+Read request:  
+`GET /apis/fhir/v4/ValueSet/:id/$expand`  
 
 <br><br>
