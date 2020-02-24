@@ -216,7 +216,7 @@ _include|Appointment:patient
 _sort|date, priority, service-type **
 _summary|count
 
-** Can be used separately or combined together using paranthesis
+** Can be used separately or combined together using commas
 
 <br>
 
@@ -317,7 +317,7 @@ _include|Encounter:patient
 _sort|date, priority, service-type **
 _summary|count
 
-** Can be used separately or combined together using paranthesis
+** Can be used separately or combined together using commas
 
 <br>
 
