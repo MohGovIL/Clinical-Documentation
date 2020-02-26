@@ -330,7 +330,8 @@ date|eq, ge, le||
 status|||V
 appointment|||
 patient|||
-
+service-provider|||
+service-type|||
 <br>
 
 ### Examples
