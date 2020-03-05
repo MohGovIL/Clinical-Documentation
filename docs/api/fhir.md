@@ -688,3 +688,109 @@ Read request:
 `GET /apis/fhir/v4/ValueSet/:id/$expand`  
 
 <br><br>
+
+
+
+
+
+
+## [RelatedPerson](https://www.hl7.org/fhir/relatedperson.html)
+
+### Supported Requests
+- [x] read
+- [x] search
+- [x] create
+- [x] update
+- [ ] delete
+- [x] patch
+
+<br>
+
+### Supported Resource Properties:
+
+````
+{
+    "id": "1",
+    "resourceType": "RelatedPerson",
+    "identifier": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "code": "bobo"
+                    }
+                ]
+            },
+            "value": "1235698"
+        }
+    ],
+    "active": true,
+    "patient": {
+        "reference": "Patient/1"
+    },
+    "relationship": [
+        {
+            "coding": [
+                {
+                    "code": "OCVJO"
+                }
+            ]
+        }
+    ],
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "036495774",
+            "use": "home"
+        },
+        {
+            "system": "email",
+            "value": "bobo@gmail.com"
+        },
+        {
+            "system": "phone",
+            "value": "054480880",
+            "use": "mobile"
+        }
+    ],
+    "gender": "male"
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+<br>
+
+### Supported General Parameters
+
+Parameter|Valid Values
+--|--
+
+<br>
+
+### Supported Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id|||
+identifier|||
+active|||
+patient|||
+relationship|||
+gender|||
+email|||
+<br>
+
+### Examples
+Read request:  
+`GET /apis/fhir/v4/RelatedPerson/:id`
+
+<br><br> 
+
+---
+
+<br><br> 
