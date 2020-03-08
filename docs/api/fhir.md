@@ -794,3 +794,96 @@ Read request:
 ---
 
 <br><br> 
+
+
+
+## [DocumentReference](https://www.hl7.org/fhir/DocumentReference.html)
+
+### Supported Requests
+- [x] read
+- [x] search
+- [x] create
+- [ ] update
+- [ ] delete
+- [ ] patch
+
+<br>
+
+### Supported Resource Properties:
+
+````
+{
+    "id": "5",
+    "resourceType": "DocumentReference",
+    "category": [
+        {
+            "coding": [
+                {
+                    "code": "2",
+                    "display": "EMedical Record"
+                }
+            ]
+        }
+    ],
+    "author": [
+        {
+            "reference": "Practitioner/1"
+        }
+    ],
+    "content": [
+        {
+            "attachment": {
+                "contentType": "application/pdf",
+                "data": "fgsdFGSDER4543524ASDFSADFSDFSDAFSDF$@#FV$%TtvserTDFZSD", **
+                "url": "name_bla_bla"
+            }
+        }
+    ],
+    "context": {
+        "encounter": [
+            {
+                "reference": "Encounter/1"
+            }
+        ],
+        "sourcePatientInfo": {
+            "reference": "Patient/1"
+        }
+    }
+}
+````
+** In base64 format
+
+<br>
+
+### Supported Operators
+
+None
+
+<br>
+
+### Supported General Parameters
+
+Parameter|Valid Values
+--|--
+
+<br>
+
+### Supported Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id|||
+encounter|||
+patient|||
+
+<br>
+
+### Examples
+Read request:  
+`GET /apis/fhir/v4/DocumentReference/:id`
+
+<br><br> 
+
+---
+
+<br><br> 
