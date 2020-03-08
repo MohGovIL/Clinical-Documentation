@@ -76,14 +76,14 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -208,7 +208,7 @@ Patch request:
 None
 
 <br>
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
@@ -220,7 +220,7 @@ _summary|count
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -309,7 +309,7 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
@@ -321,7 +321,7 @@ _summary|count
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -393,14 +393,14 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -476,14 +476,14 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -598,14 +598,14 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -669,14 +669,14 @@ Read request:
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -765,14 +765,14 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
@@ -861,7 +861,7 @@ None
 
 <br>
 
-### Supported General Parameters
+### Supported General Search Parameters
 
 Parameter|Valid Values
 --|--
@@ -869,7 +869,7 @@ _summary|true
 
 <br>
 
-### Supported Search Parameters
+### Supported Resource Search Parameters
 
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
