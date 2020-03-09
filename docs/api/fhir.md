@@ -253,56 +253,69 @@ Search request:
 ### Supported Requests
 - [x] read
 - [x] search
-- [ ] create
-- [ ] update
+- [x] create
+- [x] update
 - [ ] delete
-
+- [x] patch
 <br>
 
 ### Supported Resource Properties
 ````
 {
-  "id": "1",
-  "resourceType": "Encounter",
-  "status": "no",
-  "priority": {
-    "coding": [
-      {
-        "code": "1"
-      }
-    ]
-  },
-  "subject": {
-    "reference": "Patient/1"
-  },
-  "participant": [
-    {
-      "individual": {
-        "reference": "Practitioner/1"
-      }
-    }
-  ],
-  "appointment": [
-    {
-      "reference": "Appointment/1"
-    }
-  ],
-  "period": {
-    "start": "2020-02-17 00:00:00"
-  },
-  "reasonCode": [
-    {
-      "coding": [
+    "id": "7",
+    "resourceType": "Encounter",
+    "status": "planned",
+    "serviceType": {
+        "coding": [
+            {
+                "code": "1"
+            }
+        ],
+        "text": "Ultrasound"
+    },
+    "priority": {
+        "coding": [
+            {
+                "code": "0"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/1"
+    },
+    "participant": [
         {
-          "code": "1"
+            "individual": {
+                "reference": "Practitioner/1"
+            }
+        },
+        {
+            "individual": {
+                "reference": "RelatedPerson/4"
+            }
         }
-      ],
-      "text": "Shoulder"
+    ],
+    "appointment": [
+        {
+            "reference": "Appointment/1"
+        }
+    ],
+    "period": {
+        "start": "2020-03-08T00:00:00.000Z"
+    },
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "code": "5"
+                }
+            ],
+            "text": "Upper Abdomen"
+        }
+    ],
+    "serviceProvider": {
+        "reference": "Organization/2"
     }
-  ],
-  "serviceProvider": {
-    "reference": "Organization/3"
-  }
 }
 ````
 
