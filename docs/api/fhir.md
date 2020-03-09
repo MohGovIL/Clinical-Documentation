@@ -65,7 +65,10 @@
         "postalCode": "4517200",
         "country": "country_254"
       }
-    ]
+    ],
+    "managingOrganization": {
+        "reference": "Organization/6"
+    }
   }
 ```
 <br>
@@ -88,7 +91,9 @@ Parameter|Valid Values
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
 _id||exact, contains|
-identifier|||
+identifier||exact, contains|
+mobile||exact, contains|
+organization|||
 name||exact, contains|
 
 <br>
