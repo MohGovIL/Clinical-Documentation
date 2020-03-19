@@ -18,58 +18,64 @@
 
 ### Supported Resource Properties
 ```
-
   {
-    "id": 1,
-    "resourceType": "Patient",
-    "identifier": [
+   "id":1,
+   "resourceType":"Patient",
+   "identifier":[
       {
-        "value": "3432432"
+         "type":{
+            "coding":[
+               {
+                  "code":"idtype_3"
+               }
+            ]
+         },
+         "value":"34324343"
       }
-    ],
-    "name": [
+   ],
+   "name":[
       {
-        "family": "ראשון",
-        "given": [
-          "בדיקה"
-        ]
+         "family":"ראשון",
+         "given":[
+            "בדיקה"
+         ]
       }
-    ],
-    "telecom": [
+   ],
+   "telecom":[
       {
-        "system": "email",
-        "value": "amiel@gmail.com"
+         "system":"email",
+         "value":"amiel@gmail.com"
       },
       {
-        "system": "phone",
-        "value": "064525252",
-        "use": "home"
+         "system":"phone",
+         "value":"064525252",
+         "use":"home"
       },
       {
-        "system": "phone",
-        "value": "0525112396",
-        "use": "mobile"
+         "system":"phone",
+         "value":"0525112396",
+         "use":"mobile"
       }
-    ],
-    "gender": "male",
-    "birthDate": "2015-05-04",
-    "deceasedBoolean": false,
-    "address": [
+   ],
+   "gender":"male",
+   "birthDate":"2015-05-04",
+   "deceasedBoolean":false,
+   "address":[
       {
-        "type": "both",
-        "line": [
-          "3",
-          "34"
-        ],
-        "city": "city_3000",
-        "postalCode": "4517200",
-        "country": "country_254"
+         "type":"both",
+         "line":[
+            "3",
+            "34"
+         ],
+         "city":"city_3000",
+         "postalCode":"4517200",
+         "country":"country_254"
       }
-    ],
-    "managingOrganization": {
-        "reference": "Organization/6"
-    }
-  }
+   ],
+   "managingOrganization":{
+      "reference":"Organization/6"
+   }
+}
 ```
 <br>
 
