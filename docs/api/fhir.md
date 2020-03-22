@@ -106,7 +106,7 @@ name||exact, contains|
 
 ### Examples
 Read request:  
-`GET /apis/v4/Patient/:pid`
+`GET /apis/fhir/v4/Patient/:pid`
 
 Search requests:  
 `GET /apis/fhir/v4/Patient`  
@@ -115,10 +115,10 @@ Search requests:
 `GET /apis/fhir/v4/Patient?name=yosi&name=banana`  
 
 Create request:  
-`POST /apis/v4/Patient`  
+`POST /apis/fhir/v4/Patient`  
 
 Update request:  
-`PUT /apis/v4/Patient/:pid`  
+`PUT /apis/fhir/v4/Patient/:pid`  
 
 Patch request:  
 `PATCH /apis/fhir/v4/Patient/:pid`  
@@ -361,11 +361,11 @@ service-type|||
 ### Examples
 
 Search request:  
-`GET /apis/v4/Encounter/1`  
-`GET /apis/v4/Encounter (all)`  
-`GET /apis/v4/Encounter?_id=8`  
-`GET /apis/v4/Encounter?_id=8&status=planned&status=in progress (or operator)`  
-`GET /apis/v4/HealthcareService?appointment=5&patient=78`  
+`GET /apis/fhir/v4/Encounter/1`  
+`GET /apis/fhir/v4/Encounter (all)`  
+`GET /apis/fhir/v4/Encounter?_id=8`  
+`GET /apis/fhir/v4/Encounter?_id=8&status=planned&status=in progress (or operator)`  
+`GET /apis/fhir/v4/HealthcareService?appointment=5&patient=78`  
 `GET /apis/fhir/v4/Encounter?date=gt2020-02-09`  
 
 <br><br>  
@@ -522,11 +522,11 @@ Read request:
 `GET /apis/fhir/v4/Organization/:id`  
 
 Search requests:  
-`GET /apis/v4/Organization (all)`  
-`GET /apis/v4/Organization?_id=8`  
-`GET /apis/v4/Organization?_id=8&active=1`  
-`GET /apis/v4/Organization?name=לשכת בריאות חיפה`  
-`GET /apis/v4/Organization?name=חיפה&active=1`  
+`GET /apis/fhir/v4/Organization (all)`  
+`GET /apis/fhir/v4/Organization?_id=8`  
+`GET /apis/fhir/v4/Organization?_id=8&active=1`  
+`GET /apis/fhir/v4/Organization?name=לשכת בריאות חיפה`  
+`GET /apis/fhir/v4/Organization?name=חיפה&active=1`  
 
 <br><br> 
 
