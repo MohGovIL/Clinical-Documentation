@@ -150,8 +150,8 @@ Patch request:
 
 ### Supported Requests
 - [x] read  
-- [ ] search  
-- [ ] create  
+- [x] search  
+- [x] create  
 - [x] update  
 - [ ] delete
 
@@ -911,4 +911,135 @@ Read request:
 
 ---
 
+<br><br>
+
+## [Questionnaire](https://www.hl7.org/fhir/questionnaire.html)
+
+### Supported Requests
+- [x] read  
+- [ ] search  
+- [ ] create  
+- [ ] update  
+- [ ] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "38",
+    "resourceType": "Questionnaire",
+    "name": "commitment_questionnaire",
+    "title": "Commitment questionnaire",
+    "status": "active",
+    "item": [
+        {
+            "linkId": "1",
+            "text": "Commitment number",
+            "type": "integer"
+        },
+        {
+            "linkId": "2",
+            "text": "Commitment date",
+            "type": "date"
+        }
+
+    ]
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+None
+
 <br><br> 
+ 
+---
+
+
+<br><br>
+
+## [QuestionnaiReresponse](https://www.hl7.org/fhir/questionnaireresponse.html)
+
+### Supported Requests
+- [x] read  
+- [x] search  
+- [x] create  
+- [x] update  
+- [ ] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "61",
+    "resourceType": "QuestionnaireResponse",
+    "questionnaire": "Questionnaire/38",
+    "status": "in-progress",
+    "subject": {
+        "reference": "Patient/4"
+    },
+    "encounter": {
+        "reference": "Encounter/1"
+    },
+    "authored": "2020-03-24T12:21:21.000Z",
+    "author": {
+        "reference": "Practitioner/1"
+    },
+    "source": {
+        "reference": "Patient/4"
+    },
+    "item": [
+        {
+            "linkId": "1",
+            "text": "Commitment number",
+            "answer": [
+                {
+                    "valueInteger": "11111111"
+                }
+            ]
+        },
+        {
+            "linkId": "2",
+            "text": "Commitment date",
+            "answer": [
+                {
+                    "valueDate": "03/01/1984"
+                }
+            ]
+        }
+
+    ]
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact|
+status||exact|
+encounter||exact|
+questionnaire|||
+subject||exact|
+author||exact|
+patient||exact|
+
+<br><br> 
+ 
+---
