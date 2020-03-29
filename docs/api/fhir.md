@@ -21,18 +21,19 @@
   {
    "id":1,
    "resourceType":"Patient",
-   "identifier":[
-      {
-         "type":{
-            "coding":[
-               {
-                  "code":"idtype_3"
-               }
-            ]
-         },
-         "value":"34324343"
-      }
-   ],
+    "identifier": [
+        {
+            "type": {
+                "coding": [
+                    {
+                        "code": "idtype_3"
+                    }
+                ],
+                "text": "idtype_3"
+            },
+            "value": "43534535345"
+        }
+    ],
    "name":[
       {
          "family":"ראשון",
