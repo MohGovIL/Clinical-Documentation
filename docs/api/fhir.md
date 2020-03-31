@@ -433,8 +433,6 @@ _id|||
 given|||
 family|||
 
-** Value comes from "family" or "given"
-
 <br>
 
 ### Examples
