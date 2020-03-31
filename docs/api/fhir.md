@@ -430,8 +430,8 @@ Parameter|Valid Values
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
 _id|||
-name**|||
-active|||
+given|||
+family|||
 
 ** Value comes from "family" or "given"
 
