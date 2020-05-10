@@ -185,7 +185,7 @@ Parameter|Valid Values
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
 _id||exact, contains|
-identifier||exact, contains,of-type| "system|code|identifier" *
+identifier||exact, contains,of-type| "system\|code\|identifier" *
 mobile||exact, contains|
 organization|||
 name||exact, contains|
