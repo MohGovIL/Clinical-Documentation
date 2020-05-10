@@ -3,7 +3,7 @@
 <https://www.hl7.org/fhir/http.html>
 
 
-### API Examples
+##### API Examples
 Read request:  
 `GET /apis/fhir/v4/Patient/:pid`
 
@@ -95,7 +95,7 @@ fail
 
 ### Supported Requests
 - [x] read
-- [ ] search
+- [x] search
 - [x] create
 - [x] update
 - [ ] delete
@@ -185,13 +185,13 @@ Parameter|Valid Values
 Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
 _id||exact, contains|
-identifier||exact, contains|
+identifier||exact, contains,of-type| "system|code|identifier" *
 mobile||exact, contains|
 organization|||
 name||exact, contains|
 
 <br>
-
+* example :identifier:of-type=|idtype_3|1111111
 ---
 
 <br><br>
@@ -311,7 +311,7 @@ Search request:
 - [x] search
 - [x] create
 - [x] update
-- [ ] delete
+- [x] delete
 - [x] patch
 <br>
 
