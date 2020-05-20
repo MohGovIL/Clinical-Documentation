@@ -1,5 +1,3 @@
-# clinikal-documentation
-
 This repository contains the source code for the documentation on this site:  
 https://clinikal-documentation.readthedocs.io/en/latest/
 
