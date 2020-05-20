@@ -1,23 +1,26 @@
 # Setup Composer File
-1) Go to the `composer.json` file under the openemr root directory.  
-2) Add the following json objects to the "repositories" array: 
-```
-{
-    "type": "vcs",
-    "url": "https://github.com/israeli-moh/clinikal-backend.git"
-},
-{
-    "type": "vcs",
-    "url": "https://github.com/israeli-moh/composer-installers-clinikal-extender.git"
-}
-```
-3) Add the following json object to the root json object:
-```
-"extra": {
-        "installer-types": [
-            "clinikal-vertical"
-        ]
+Add the following to the openemr/composer.json:  
+``` json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "git@github.com:israeli-moh/clinikal-backend.git"
+    },
+    {
+        "type": "vcs",
+        "url": "git@github.com:israeli-moh/composer-installers-clinikal-extender.git"
     }
+],
+"require": {
+    "clinikal/clinikal-backend": "dev-master",
+    "clinikal/composer-installers-clinikal-extender": "dev-master",
+    "clinikal/vertical-imaging-backend": "dev-master"
+},
+"extra": {
+    "installer-types": [
+        "clinikal-vertical"
+    ],
+}
 ```
 <br>
 
