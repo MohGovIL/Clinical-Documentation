@@ -24,7 +24,7 @@
 # Run Composer
 In a terminal, `cd` into the openemr root directory (where the composer.json is), and run:  
 ```
-composer update
+composer update clinikal
 ```  
   
 This downloads the modules code into the openemr/vendor/clinikal and triggers the composer installer extension in the composer-installers-clinikal-extender repository.  
