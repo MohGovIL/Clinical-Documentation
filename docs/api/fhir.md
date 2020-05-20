@@ -2,93 +2,6 @@
 
 <https://www.hl7.org/fhir/http.html>
 
-
-##### API Examples
-Read request:  
-`GET /apis/fhir/v4/Patient/:pid`
-
-Search requests:  
-`GET /apis/fhir/v4/Patient`  
-`GET /apis/fhir/v4/Patient?_id=1`  
-`GET /apis/fhir/v4/Patient?identifier=308826367`  
-`GET /apis/fhir/v4/Patient?name=yosi&name=banana`  
-
-Create request:  
-`POST /apis/fhir/v4/Patient`  
-
-Update request:  
-`PUT /apis/fhir/v4/Patient/:pid`  
-
-Patch request:  
-`PATCH /apis/fhir/v4/Patient/:pid`  
-```
-[
-    {op:"replace", path:"/id", value:"1"},
-    {op:"replace", path:"/identifier/0/value", value:"3432432"},
-    {op:"replace", path:"/name/0/family", value:"family"},
-    {op:"replace", path:"/name/0/given", value:["lname","mname"]},
-    {op:"replace", path:"/telecom/0", value:{system: "phone",value: "064525252",use: "home" } } ,
-    {op:"replace", path:"/telecom/1", value:{system: "email",value: "amiel@gmail.com" } } ,
-    {op:"replace", path:"/telecom/2", value:{system: "phone",value: "0525112396",use: "mobile" } } ,
-    {op:"replace", path:"/gender", value:"male"},
-    {op:"replace", path:"/birthDate", value:"1993-05-04" },
-    {op:"replace", path:"/deceasedBoolean", value:"true" },
-    {op:"replace", path:"/deceasedDateTime", value: "2020-01-04" },
-    {op:"replace", path:"/address/0", value:{type:"both",city:"city_3000",postalCode:"4517200",country:"country_254"} },
-    {op:"replace", path:"/address/0/line", value:["street_200","3","34"] }
-]
-```
-
-
-Delete request:  
-`DELETE apis/fhir/v4/DocumentReference/22` 
-
-success
- 
-```
-{
-    "resourceType": "OperationOutcome",
-    "text": {
-        "status": "generated"
-    },
-    "issue": [
-        {
-            "severity": "information",
-            "code": "informational",
-            "diagnostics": "Successfully deleted 1 resource(s)"
-        }
-    ]
-}
-```
-
-<br><br> 
-
-fail
- 
-```
-{
-    "resourceType": "OperationOutcome",
-    "text": {
-        "status": "generated"
-    },
-    "issue": [
-        {
-            "severity": "error",
-            "code": "processing",
-            "diagnostics": "Unable to delete DocumentReference/22.failed to delete from doc db"
-        },
-        {
-            "severity": "information",
-            "code": "information",
-            "diagnostics": "HTTP Error with status 400 occoured while requesting"
-        }
-    ]
-}
-```
-
-<br><br> 
-
-
 <br><br><br>
 
 ##[Patient](https://www.hl7.org/fhir/patient.html)
@@ -1014,7 +927,7 @@ None
 
 <br><br>
 
-## [QuestionnaiReresponse](https://www.hl7.org/fhir/questionnaireresponse.html)
+## [QuestionnaireResponse](https://www.hl7.org/fhir/questionnaireresponse.html)
 
 ### Supported Requests
 - [x] read  
@@ -1091,3 +1004,88 @@ patient||exact|
 <br><br> 
  
 ---
+
+## API Examples
+Read request:  
+`GET /apis/fhir/v4/Patient/:pid`
+
+Search requests:  
+`GET /apis/fhir/v4/Patient`  
+`GET /apis/fhir/v4/Patient?_id=1`  
+`GET /apis/fhir/v4/Patient?identifier=308826367`  
+`GET /apis/fhir/v4/Patient?name=yosi&name=banana`  
+
+Create request:  
+`POST /apis/fhir/v4/Patient`  
+
+Update request:  
+`PUT /apis/fhir/v4/Patient/:pid`  
+
+Patch request:  
+`PATCH /apis/fhir/v4/Patient/:pid`  
+``` json
+[
+    {op:"replace", path:"/id", value:"1"},
+    {op:"replace", path:"/identifier/0/value", value:"3432432"},
+    {op:"replace", path:"/name/0/family", value:"family"},
+    {op:"replace", path:"/name/0/given", value:["lname","mname"]},
+    {op:"replace", path:"/telecom/0", value:{system: "phone",value: "064525252",use: "home" } } ,
+    {op:"replace", path:"/telecom/1", value:{system: "email",value: "amiel@gmail.com" } } ,
+    {op:"replace", path:"/telecom/2", value:{system: "phone",value: "0525112396",use: "mobile" } } ,
+    {op:"replace", path:"/gender", value:"male"},
+    {op:"replace", path:"/birthDate", value:"1993-05-04" },
+    {op:"replace", path:"/deceasedBoolean", value:"true" },
+    {op:"replace", path:"/deceasedDateTime", value: "2020-01-04" },
+    {op:"replace", path:"/address/0", value:{type:"both",city:"city_3000",postalCode:"4517200",country:"country_254"} },
+    {op:"replace", path:"/address/0/line", value:["street_200","3","34"] }
+]
+```
+
+
+Delete request:  
+`DELETE apis/fhir/v4/DocumentReference/22` 
+
+success
+ 
+```
+{
+    "resourceType": "OperationOutcome",
+    "text": {
+        "status": "generated"
+    },
+    "issue": [
+        {
+            "severity": "information",
+            "code": "informational",
+            "diagnostics": "Successfully deleted 1 resource(s)"
+        }
+    ]
+}
+```
+
+<br><br> 
+
+fail
+ 
+```
+{
+    "resourceType": "OperationOutcome",
+    "text": {
+        "status": "generated"
+    },
+    "issue": [
+        {
+            "severity": "error",
+            "code": "processing",
+            "diagnostics": "Unable to delete DocumentReference/22.failed to delete from doc db"
+        },
+        {
+            "severity": "information",
+            "code": "information",
+            "diagnostics": "HTTP Error with status 400 occoured while requesting"
+        }
+    ]
+}
+```
+
+<br><br> 
