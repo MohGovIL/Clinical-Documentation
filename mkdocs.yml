@@ -1,6 +1,7 @@
 site_name: Clinikal documentation
 nav:
     - Overview: index.md
+    - FHIR Modules Installation: fhir modules installation.md
     - API:
         - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
