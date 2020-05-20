@@ -5,6 +5,4 @@ nav:
     - API:
         - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
-    - Mkdocs Instructions: mkdocs.md
-
 theme: readthedocs
