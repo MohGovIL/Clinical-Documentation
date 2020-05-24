@@ -36,5 +36,5 @@ This enables us to use the vertical's modules, styles, and menus.
 
 # Install Modules
 In the **Modules** -> **Manage Modules** screen, **Register** then **Install** the following modules (in this order):  
-1) GenericTools
-2) FhirAPI
+1) GenericTools  
+2) FhirAPI  
