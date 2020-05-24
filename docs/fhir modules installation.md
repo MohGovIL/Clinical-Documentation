@@ -13,8 +13,7 @@ Add the following to the openemr/composer.json:
 ],
 "require": {
     "clinikal/clinikal-backend": "dev-master",
-    "clinikal/composer-installers-clinikal-extender": "dev-master",
-    "clinikal/vertical-imaging-backend": "dev-master"
+    "clinikal/composer-installers-clinikal-extender": "dev-master"
 },
 "extra": {
     "installer-types": [
@@ -36,10 +35,6 @@ This enables us to use the vertical's modules, styles, and menus.
 <br>
 
 # Install Modules
-1) Open openemr in the web browser and login  
-2) In the top navigation menu, choose **Modules** -> **Manage Modules**  
-3) Go to the **Unregistered** tab  
-4) Next to the GenericTools module, click on **Register**  
-5) Go back to the **Registered** tab  
-6) Next to the GenericTools module, click on **Install**  
-7) Do the same for the FhirAPI module (steps 3-7) 
+In the **Modules** -> **Manage Modules** screen, **Register** then **Install** the following modules (in this order):
+1) GenericTools
+2) FhirAPI
