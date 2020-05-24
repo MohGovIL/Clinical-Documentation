@@ -1,3 +1,5 @@
+These instructions assume you already have a working Openemr application installed.  
+
 # Setup Composer File
 Add the following to the openemr/composer.json:  
 ``` json
