@@ -1005,6 +1005,122 @@ patient||exact|
  
 ---
 
+---
+
+
+<br><br>
+
+## [condition](https://www.hl7.org/fhir/condition.html)
+
+### Supported Requests
+- [x] read  
+- [x] search  
+- [x] create  
+- [x] update  
+- [ ] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "1",
+    "resourceType": "Condition",
+    "clinicalStatus": {
+        "coding": [
+            {
+                "system": "clinikal/valueset/reaction/outcome",
+                "code": "0"
+            }
+        ],
+        "text": "Unassigned"
+    },
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "clinikal/condition/category/medical_problem",
+                    "code": "asthma"
+                }
+            ]
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "clinikal/diagnosis/type/MOH_ICD10",
+                "code": "A159"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/1"
+    },
+    "onsetDateTime": "2020-05-01T11:12:15.000Z",
+    "abatementDateTime": "2020-05-25T11:12:15.000Z",
+    "recordedDate": "2020-05-25T15:35:27.000Z",
+    "recorder": {
+        "reference": "Practitioner/1"
+    },
+    "stage": [
+        {
+            "summary": {
+                "text": "bad asthma"
+            },
+            "type": {
+                "coding": [
+                    {
+                        "system": "clinikal/valueset/reaction/occurrence",
+                        "code": "2"
+                    }
+                ],
+                "text": "frequency_1"
+            }
+        }
+    ],
+    "evidence": [
+        {
+            "code": [
+                {
+                    "coding": [
+                        {
+                            "system": "clinikal/valueset/reaction",
+                            "code": "shortness_of_breath"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "note": [
+        {
+            "text": "bla bla"
+        }
+    ]
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact|
+clinical-status||exact|
+code||exact|
+category|||
+subject||exact|
+
+<br><br> 
+ 
+---
+
 ## API Examples
 Read request:  
 `GET /apis/fhir/v4/Patient/:pid`
