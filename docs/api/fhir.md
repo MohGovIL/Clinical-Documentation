@@ -1113,11 +1113,13 @@ Parameter|Prefixes|Modifiers|OR Logic
 --|--|--|--
 _id||exact|
 clinical-status||exact|
-code||exact|
+code||of-type| "system\|code\|identifier" *
 category|||
 subject||exact|
 
 <br><br> 
+ 
+*example  Condition?code:of-type=|MOH_ICD10|A159
  
 ---
 
