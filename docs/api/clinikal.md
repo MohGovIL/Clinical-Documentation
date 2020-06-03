@@ -51,3 +51,26 @@ Get Bearer token
  }
 ]
 ```
+
+
+
+##Templates for the forms
+
+**Request:**
+> GET  api/templates/search?service-type=5&reason-code=2&form=7&form-field=recomended_medicine
+
+**querystring parametrs **
+
+    service-type : integer not null - the type of the service needed
+    reason-code  : integer not null - the reason code
+    form-field : string not null - the field of the form like recomended_medicine
+    form : string not null - the id of the form
+
+**Response (example):**
+```
+[
+'template  1',
+'template 2',
+'this is template 3'
+]
+```
