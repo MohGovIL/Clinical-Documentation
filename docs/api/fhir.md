@@ -722,6 +722,11 @@ Read request:
             ]
         }
     ],
+    "name": [
+        {
+            "text": "idan the man"
+        }
+    ],
     "telecom": [
         {
             "system": "phone",
