@@ -233,6 +233,16 @@ Search request:
 {
     "id": "7",
     "resourceType": "Encounter",
+    "extension": [
+        {
+            "valueString": "Life is peaceful there",
+            "url": "clinikal/extensions/reasonCodesDetail"
+        },
+        {
+            "valueString": "Go West ",
+            "url": "clinikal/extensions/arrivalWay"
+        }
+    ],
     "status": "planned",
     "serviceType": {
         "coding": [
@@ -319,8 +329,11 @@ appointment|||
 patient|||
 service-provider|||
 service-type|||
+arrival_way|||*1
+reason_codes_details|||*1
 <br>
 
+*1 search is by part of string (does not support exact)
 ### Examples
 
 Search request:  
