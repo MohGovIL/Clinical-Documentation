@@ -773,6 +773,9 @@ patient|||
 relationship|||
 gender|||
 email|||
+name|||
+
+*name search by name (full name) is exact search unless a parameter is being used. 
 <br>
 
 ### Examples
