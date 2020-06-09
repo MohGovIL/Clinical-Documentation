@@ -1050,7 +1050,7 @@ patient||exact|
     "clinicalStatus": {
         "coding": [
             {
-                "system": "clinikal/valueset/reaction/outcome",
+                "system": "http://clinikal/valueset/reaction/outcome",
                 "code": "0"
             }
         ],
@@ -1060,7 +1060,7 @@ patient||exact|
         {
             "coding": [
                 {
-                    "system": "clinikal/condition/category/medical_problem",
+                    "system": "http://clinikal/condition/category/medical_problem",
                     "code": "asthma"
                 }
             ]
@@ -1069,7 +1069,7 @@ patient||exact|
     "code": {
         "coding": [
             {
-                "system": "clinikal/diagnosis/type/MOH_ICD10",
+                "system": "http://clinikal/diagnosis/type/MOH_ICD10",
                 "code": "A159"
             }
         ]
@@ -1091,7 +1091,7 @@ patient||exact|
             "type": {
                 "coding": [
                     {
-                        "system": "clinikal/valueset/reaction/occurrence",
+                        "system": "http://clinikal/valueset/reaction/occurrence",
                         "code": "2"
                     }
                 ],
@@ -1105,7 +1105,7 @@ patient||exact|
                 {
                     "coding": [
                         {
-                            "system": "clinikal/valueset/reaction",
+                            "system": "http://clinikal/valueset/reaction",
                             "code": "shortness_of_breath"
                         }
                     ]
@@ -1135,12 +1135,14 @@ Parameter|Prefixes|Modifiers|OR Logic
 _id||exact|
 clinical-status||exact|
 code||of-type| "system\|code\|identifier" *
-category|||
+category||| "URL\|code" **
 subject||exact|
 
 <br><br> 
  
 *example  Condition?code:of-type=|MOH_ICD10|A159
+**example  category?category=http://clinikal/condition/category/medical_problem|asthma (code is optional)
+
  
 ---
 
