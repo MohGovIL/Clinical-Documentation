@@ -1144,6 +1144,83 @@ subject||exact|
  
 ---
 
+
+## [MedicationStatement](https://www.hl7.org/fhir/medicationstatement.html)
+
+### Supported Requests
+- [x] read  
+- [x] search  
+- [x] create  
+- [x] update  
+- [ ] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "1",
+    "resourceType": "MedicationStatement",
+    "status": "inactive",
+    "category": {
+        "coding": [
+            {
+                "system": "clinikal/medicationStatement/category/medication",
+                "code": "Lipitor"
+            }
+        ],
+        "text": "Lipitor title"
+    },
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://clinikal/valueset/Daa",
+                "code": "A10"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/1"
+    },
+    "effectivePeriod": {
+        "start": "2020-06-01T13:39:46.000Z",
+        "end": "2020-06-07T13:39:46.000Z"
+    },
+    "dateAsserted": "2020-06-07 07:22:53T13:39:46.000Z",
+    "informationSource": {
+        "reference": "Practitioner/1"
+    },
+    "note": [
+        {
+            "text": "tell here more stuff"
+        }
+    ]
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact|
+status||exact|
+code||of-type| "system\|code\|identifier" *
+patient||exact|
+
+<br><br> 
+ 
+*example  MedicationStatement?code:of-type=|codetype|codevalue
+ 
+---
+
+
 ## API Examples
 Read request:  
 `GET /apis/fhir/v4/Patient/:pid`
