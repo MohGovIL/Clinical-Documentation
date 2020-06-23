@@ -241,6 +241,14 @@ Search request:
         {
             "valueString": "Go West ",
             "url": "clinikal/extensions/arrivalWay"
+        },
+        {
+            "valueString": "waiting_for_nurse",
+            "url": "http://clinikal/extensions/encounter/secondaryStatus"
+        },
+        {
+            "valueDateTime": "2019-06-21T13:15:20.000Z",
+            "url": "http://clinikal/extensions/encounter/statusUpdateDate"
         }
     ],
     "status": "planned",
@@ -331,9 +339,16 @@ service-provider|||
 service-type|||
 arrival_way|||*1
 reason_codes_details|||*1
+all-statuses|||*2
+
 <br>
 
 *1 search is by part of string (does not support exact)
+*2 search in :
+        Encounter.status 
+        OR 
+        Encounter.extension.valueString (WHERE url "http://clinikal/extensions/encounter/secondaryStatus")
+
 ### Examples
 
 Search request:  
