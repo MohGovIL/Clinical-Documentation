@@ -236,11 +236,11 @@ Search request:
     "extension": [
         {
             "valueString": "Life is peaceful there",
-            "url": "clinikal/extensions/reasonCodesDetail"
+            "url": "http://clinikal/extensions/encounter/reasonCodesDetail"
         },
         {
             "valueString": "Go West ",
-            "url": "clinikal/extensions/arrivalWay"
+            "url": "http://clinikal/extensions/encounter/arrivalWay"
         },
         {
             "valueString": "waiting_for_nurse",
