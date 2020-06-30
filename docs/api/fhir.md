@@ -914,7 +914,7 @@ Read request:
 
 ### Supported Requests
 - [x] read  
-- [ ] search  
+- [x] search  
 - [ ] create  
 - [ ] update  
 - [ ] delete
@@ -954,7 +954,14 @@ None
 
 ### Supported Resource Search Parameters
 
-None
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+title||exact|
+status||exact| active|retired
+name||exact|
+
+
+<br><br> 
 
 <br><br> 
  
