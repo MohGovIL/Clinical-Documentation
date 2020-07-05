@@ -1268,7 +1268,13 @@ patient||exact|
     "status": "1",
     "category": [
         {
-            "text": "vital-signs "
+            "coding": [
+                {
+                    "system": "http://hl7.org/fhir/ValueSet/observation-category",
+                    "code": "vital-signs"
+                }
+            ],
+            "text": "Vital Signs"
         }
     ],
     "subject": {
