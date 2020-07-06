@@ -1207,8 +1207,8 @@ subject||exact|
         "reference": "Patient/1"
     },
     "effectivePeriod": {
-        "start": "2020-06-01T13:39:46.000Z",
-        "end": "2020-06-07T13:39:46.000Z"
+        "start": "2020-06-01",
+        "end": "2020-06-07"
     },
     "dateAsserted": "2020-06-07 07:22:53T13:39:46.000Z",
     "informationSource": {
