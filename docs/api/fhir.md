@@ -1549,6 +1549,144 @@ category||exact|
 *example  MedicationStatement?code:of-type=|codetype|codevalue
  
 ---
+## [MedicationRequest](https://www.hl7.org/fhir/medicationrequest.html)
+
+### Supported Requests
+- [x] read  
+- [x] search  
+- [x] create  
+- [x] update  
+- [x] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "1",
+    "resourceType": "MedicationRequest",
+    "status": "active",
+    "medicationCodeableConcept": {
+        "coding": [
+            {
+                "system": "http://clinikal/valueset/drugs",
+                "code": "123",
+                "display": "akamol"
+            }
+        ]
+    },
+    "subject": {
+        "reference": "Patient/1"
+    },
+    "encounter": {
+        "reference": "Encounter/2"
+    },
+    "authoredOn": "2020-07-06T06:35:35.000Z",
+    "requester": {
+        "reference": "Practitioner/1"
+    },
+    "recorder": {
+        "reference": "Practitioner/1"
+    },
+    "note": [
+        {
+            "text": "sdfsdfsdf"
+        }
+    ],
+    "dosageInstruction": [
+        {
+            "timing": {
+                "repeat": {
+                    "boundsPeriod": {
+                        "start": "2020-07-02",
+                        "end": "2021-03-18"
+                    }
+                },
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://clinikal/valueset/drug_interval",
+                            "code": "1"
+                        }
+                    ],
+                    "text": "Once a day"
+                }
+            },
+            "site": {
+                "coding": [
+                    {
+                        "system": "http://clinikal/valueset/drug_site",
+                        "code": "1"
+                    }
+                ]
+            },
+            "route": {
+                "coding": [
+                    {
+                        "system": "http://clinikal/valueset/drug_route",
+                        "code": "1"
+                    }
+                ],
+                "text": "Per oris"
+            },
+            "method": {
+                "coding": [
+                    {
+                        "system": "http://clinikal/valueset/drug_form",
+                        "code": "1"
+                    }
+                ],
+                "text": "Tablet"
+            },
+            "doseAndRate": [
+                {
+                    "doseQuantity": {
+                        "value": "1"
+                    }
+                }
+            ],
+            "maxDosePerAdministration": {
+                "value": "343",
+                "unit": "9",
+                "system": "http://clinikal/valueset/units",
+                "code": "4"
+            }
+        }
+    ],
+    "substitution": {
+        "allowedBoolean": "true"
+    }
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact|
+encounter||exact|
+patient||exact|
+recorder||exact|
+requester||exact|
+code||exact|
+
+
+
+<br><br> 
+ 
+*example  MedicationStatement?code:of-type=|codetype|codevalue
+ 
+---
+
+
+---
 
 
 
