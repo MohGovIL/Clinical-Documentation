@@ -1684,7 +1684,120 @@ code||exact|
 *example  MedicationStatement?code:of-type=|codetype|codevalue
  
 ---
+---
+## [ServiceRequest](https://www.hl7.org/fhir/servicerequest.html)
 
+### Supported Requests
+- [x] read  
+- [x] search  
+- [x] create  
+- [x] update  
+- [] delete
+
+<br>
+
+### Supported Resource Properties
+````
+{
+    "id": "1",
+    "resourceType": "ServiceRequest",
+    "status": "active",
+    "intent": "plan",
+    "category": [
+        {
+            "coding": [
+                {
+                    "system": "http://clinikal/valueset/service_types",
+                    "code": "1"
+                }
+            ],
+            "text": "Emergency Medicine"
+        }
+    ],
+    "code": {
+        "coding": [
+            {
+                "system": "http://clinikal/valueset/tests_and_treatments",
+                "code": "dehydration"
+            }
+        ],
+        "text": "EGK"
+    },
+    "orderDetail": [
+        {
+            "coding": [
+                {
+                    "system": "http://clinikal/valueset/details_x_ray",
+                    "code": "laboratory_tests"
+                }
+            ],
+            "text": "sole"
+        }
+    ],
+    "subject": {
+        "reference": "Patient/1"
+    },
+    "encounter": {
+        "reference": "Encounter/1"
+    },
+    "occurrenceDateTime": "2020-07-13T00:00:00.000Z",
+    "authoredOn": "2020-07-13T00:00:00.000Z",
+    "requester": {
+        "reference": "Practitioner/1"
+    },
+    "performer": [
+        {
+            "reference": "Practitioner/1"
+        }
+    ],
+    "reasonCode": [
+        {
+            "coding": [
+                {
+                    "code": "1"
+                }
+            ]
+        }
+    ],
+    "reasonReference": [
+        {
+            "reference": "DocumentReference/1"
+        }
+    ],
+    "note": [
+        {
+            "text": "patient instruction"
+        }
+    ],
+    "patientInstruction": "patient instruction"
+}
+````
+
+<br>
+
+### Supported Operators
+
+None
+
+
+### Supported Resource Search Parameters
+
+Parameter|Prefixes|Modifiers|OR Logic
+--|--|--|--
+_id||exact|
+encounter||exact|
+patient||exact|
+authored||exact|*
+occurrence||exact|*
+status||exact|
+
+
+
+<br><br> 
+ 
+* only datetime search
+ 
+---
 
 ---
 
