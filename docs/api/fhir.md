@@ -1684,7 +1684,6 @@ code||exact|
 *example  MedicationStatement?code:of-type=|codetype|codevalue
  
 ---
----
 ## [ServiceRequest](https://www.hl7.org/fhir/servicerequest.html)
 
 ### Supported Requests
@@ -1790,6 +1789,8 @@ patient||exact|
 authored||exact|*
 occurrence||exact|*
 status||exact|
+_include|ServiceRequest:requester,ServiceRequest:performer
+_sort|_sort=-authored
 
 
 
