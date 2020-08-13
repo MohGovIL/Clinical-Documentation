@@ -74,3 +74,51 @@ Get Bearer token
 'this is template 3'
 ]
 ```
+
+
+##Letters
+
+###List of all the available letters
+
+**Request:**
+> GET  api/letters/list
+
+The response contains all the parameters are required for the letter.
+
+**Response (example):**
+```
+{
+    "xray": {
+        "letter_post_json": {
+            "facility": "required",
+            "encounter": "required",
+            "owner": "optional",
+            "patient": "optional"
+        }
+    }
+}
+```
+
+
+###Create letter
+
+**Request:**
+> POST  api/letters/:letter_name
+
+
+**Body params: (according the requirement)**
+example - 
+```
+{
+        "facility": "13",
+        "encounter": "1",
+ }
+```
+
+**Response (example):**
+```
+{
+    "id": 1,
+    "base64_data": "JVBERi0xLjQKJ....................VBERi0"
+}
+```
