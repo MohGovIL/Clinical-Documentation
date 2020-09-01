@@ -1099,6 +1099,9 @@ patient||exact|
     "subject": {
         "reference": "Patient/1"
     },
+    "encounter": {
+        "reference": "Encounter/1"
+    },
     "onsetDateTime": "2020-05-01T11:12:15.000Z",
     "abatementDateTime": "2020-05-25T11:12:15.000Z",
     "recordedDate": "2020-05-25T15:35:27.000Z",
@@ -1159,6 +1162,7 @@ clinical-status||exact|
 code||of-type| "system\|code\|identifier" *
 category||| "URL\|code" **
 subject||exact|
+encounter||exact|
 
 <br><br> 
  
@@ -1206,6 +1210,9 @@ subject||exact|
     "subject": {
         "reference": "Patient/1"
     },
+    "context": {
+        "reference": "Encounter/1"
+    },
     "effectivePeriod": {
         "start": "2020-06-01",
         "end": "2020-06-07"
@@ -1237,6 +1244,7 @@ _id||exact|
 status||exact|
 code||of-type| "system\|code\|identifier" *
 patient||exact|
+context||exact|
 
 <br><br> 
  
