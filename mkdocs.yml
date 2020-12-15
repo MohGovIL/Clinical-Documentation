@@ -1,7 +1,13 @@
 site_name: Clinikal documentation
 nav:
-    - Overview: index.md
-    - FHIR Modules Installation: fhir modules installation.md
+    - Welcome to Clinikal: Welcome to Clinikal.md
+    - Get started:
+          - Docker installation: get_started/Docker installation.md
+          - OpenEMR modules: get_started/openemr_modules.md
+          - Client application: get_started/client_app.md
+          - Documents storage: get_started/documents_storage.md
+          - Internationalization: get_started/Internationalization.md
+          - Set up a first clinic: get_started/setup_first_clinic.md
     - API:
         - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
