@@ -15,7 +15,7 @@ Every type of clinic is built from different Docker image.
 1. pull the image from DockerHub:
 `docker pull israelimoh/clinikal:emergency-1.0.0`
 2. Setup the container -
-```
+```shell
 docker run \
         --name $INSTALLATION_NAME \
         --env DOMAIN_NAME=$DOMAIN_NAME \
