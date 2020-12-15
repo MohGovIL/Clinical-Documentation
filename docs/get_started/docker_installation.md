@@ -12,7 +12,7 @@ Every type of clinic is built from different Docker image.
 ## Emnergency center
 
 ### release 1.0.0
-1. pull the image from DockerHub:
+1. pull the image from [DockerHub](https://hub.docker.com/r/israelimoh/clinikal/tags):
 `docker pull israelimoh/clinikal:emergency-1.0.0`
 2. Setup the container -
 ```shell

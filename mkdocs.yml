@@ -4,7 +4,6 @@ nav:
     - Get started:
           - Docker installation: get_started/docker_installation.md
           - OpenEMR modules: get_started/openemr_modules.md
-          - Client application: get_started/client_app.md
           - Documents storage: get_started/documents_storage.md
           - Internationalization: get_started/Internationalization.md
           - Set up a first clinic: get_started/setup_first_clinic.md

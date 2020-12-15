@@ -1,3 +1,5 @@
+# Manual installation
+
 These instructions assume you already have a working [Openemr application installed](https://www.open-emr.org/wiki/index.php/OpenEMR_Installation_Guides).  
 
 ## Fhir API modules
@@ -78,4 +80,6 @@ In the **Modules** -> **Manage Modules** screen, **Register** then **Install** t
 1) ClinikalApi  
 2) EmergencyMedicine  
 3) ImportData  
-4) ReportTool  
+4) ReportTool
+
+## Connect client app  
