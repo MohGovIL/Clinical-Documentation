@@ -45,6 +45,7 @@ In the **Modules** -> **Manage Modules** screen, **Register** then **Install** t
 1) GenericTools  
 2) FhirAPI  
 
+The [Fhir API](https://clinikal-documentation.readthedocs.io/en/latest/api/fhir/) modules can stand alone for for a variety of uses.
 
 ## Clinikal modules - for React client app
 
@@ -82,4 +83,9 @@ In the **Modules** -> **Manage Modules** screen, **Register** then **Install** t
 3) ImportData  
 4) ReportTool
 
-## Connect client app  
+## Install React app
+
+1. clone repository from Github - `https://github.com/israeli-moh/clinikal-react`
+2. Run `npm install`
+3. Creat new .env.local in the project root and add single parameter named `REACT_APP_API_BASE_URL=<OPENEMR_DOMAIN>` into file.  
+4. Run `npm start` for development mode OR `npm run build` for production.
