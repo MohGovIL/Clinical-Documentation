@@ -2,7 +2,7 @@ site_name: Clinikal documentation
 nav:
     - Welcome to Clinikal: Welcome to Clinikal.md
     - Get started:
-          - Docker installation: get_started/Docker installation.md
+          - Docker installation: get_started/docker_installation.md
           - OpenEMR modules: get_started/openemr_modules.md
           - Client application: get_started/client_app.md
           - Documents storage: get_started/documents_storage.md
