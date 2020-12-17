@@ -6,4 +6,4 @@ Architecture graph -
 ![Screenshot](prod_graph.png)  
 
 
-[Full architecture document for download](architecture_document_hebrew.pdf) (Hebrew version)
+[Full architecture document for download](architecture_document_hebrew.pdf){target=_blank} (Hebrew version)
