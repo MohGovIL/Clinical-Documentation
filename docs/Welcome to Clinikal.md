@@ -9,7 +9,7 @@ The principle that guides us is **clean and clear**.
 Each user sees only the screens and forms relevant to his role in the clinic.   
 This ability is caused by using a system of roles and privileges for each profession in the clinic and a different installation process for each medical field which creates an innovative and convenient user experience!
 
-**We are supplied vertical solutions for those medicine fields:**  
+**We provide solutions for the following fields of medicine:**  
 
 ### Medical Emergency Center
 Clinikal for Medical Emergency Center available in production version.  
@@ -18,7 +18,7 @@ Include features (partial list):
 2. Patient managing  
 3. Encounter sheet with a dedicated forms for Emergency centers:  
     * Medical admission  
-    * Tests and treatments 
+    * Tests and treatments   
     * Diagnosis and recommendations  
 4. Discharged letter  
 5. Prescriptions  
