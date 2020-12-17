@@ -1,4 +1,6 @@
-# Overview
+# Welcome to Clinikal
+ 
+### Overview
 
 Clinikal is a Electric Medical Records application.  
 Clinical offers a new experience of administrative and medical management for variety of clinics.  
