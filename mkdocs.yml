@@ -8,8 +8,8 @@ nav:
           - Internationalization: get_started/internationalization.md
           - Set up a first clinic: get_started/setup_first_clinic.md
     - API refference:
-        - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
+        - Clinikal: api/clinikal.md
     - Developers guide:
           - JS libraries: technical_details/client_side_libraries.md
           - Assets components: technical_details/assets_components.md
