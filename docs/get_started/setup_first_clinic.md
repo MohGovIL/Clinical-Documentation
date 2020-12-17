@@ -1,7 +1,7 @@
 # Required settings for starting 
 
 ## Create new clinic
-Clinikal support working with multiple facilities. before starting you must have at least one clinic.
+Clinikal supports working with multiple facilities. before starting you must create at least one clinic.
 How to create clinic:  
 1.Go to **Administration** -> **Clinic** -> **Facilities**   
 Add new Facility:  

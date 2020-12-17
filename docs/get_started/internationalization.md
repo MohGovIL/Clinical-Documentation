@@ -5,7 +5,7 @@ This project sponsored by Israeli Ministry Of Health to promote EMR products in 
 
 Therefore the initial status after installation compatible with Israeli clinics by default.
 
-Most of Israeli behavior enable to change by settings manager and part waiting to development in the future. 
+Most of the Israeli behavior can be changed by the settings manager and part waiting to development in the future. 
 
 **Languages**  
 The default language of the system when you setup Emergency medicine clinic is Hebrew.  

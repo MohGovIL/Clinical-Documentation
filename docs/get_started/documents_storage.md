@@ -1,6 +1,6 @@
 # Documents storage
 
-Clinikal support 2 options to store documents, using [AWS S3]() or CouchDB (supported also by OpenEMR).
+Clinikal supports 2 options to store documents, using [AWS S3](https://aws.amazon.com/s3/) or CouchDB (supported also by OpenEMR).
 In the storage are saved all the discharge letters and the uploaded files.
 
 ## AWS S3 settings
