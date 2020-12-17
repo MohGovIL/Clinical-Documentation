@@ -14,12 +14,12 @@ This ability is caused by using a system of roles and privileges for each profes
 ### Medical Emergency Center
 Clinikal for Medical Emergency Center available in production version.  
 Include features (partial list):  
-1. Real-time patient tracking board
-2. Patient managing
-3. Encounter sheet with a dedicated forms for Emergency centers:
-    * Medical admission
-    * Tests and treatments
-    * Diagnosis and recommendations
-4. Discharged letter
-5. Prescriptions
-6. Encounter report
+1. Real-time patient tracking board  
+2. Patient managing  
+3. Encounter sheet with a dedicated forms for Emergency centers:  
+    * Medical admission  
+    * Tests and treatments 
+    * Diagnosis and recommendations  
+4. Discharged letter  
+5. Prescriptions  
+6. Encounter report  
