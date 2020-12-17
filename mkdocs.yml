@@ -7,7 +7,8 @@ nav:
           - Documents storage: get_started/documents_storage.md
           - Internationalization: get_started/internationalization.md
           - Set up a first clinic: get_started/setup_first_clinic.md
-    - API:
+    - API refference:
         - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
+    - License: license.md
 theme: readthedocs
