@@ -31,5 +31,5 @@ Required parameters -
 * Name
 * POS Code - 71:Public Health Clinic
 
-Login into clinikal - Enjoy!!
+#### Login into Clinikal - Enjoy!!
 ![Screenshot](images/patient_tracking.png) 

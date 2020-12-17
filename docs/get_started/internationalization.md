@@ -1,9 +1,9 @@
 
 # Internationalization
 
-This project developed as part of plan of promotion electric health in Israel by Israeli Ministry Of Health and appointed first to Israeli developers community.
+This project sponsored by Israeli Ministry Of Health to promote EMR products in Israel and designed first for Israeli developers community.
 
-Therefore the initial status after installation is match to Israeli clinics.
+Therefore the initial status after installation compatible with Israeli clinics by default.
 
 Most of Israeli behavior enable to change by settings manager and part waiting to development in the future. 
 
