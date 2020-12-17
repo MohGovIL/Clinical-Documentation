@@ -5,7 +5,7 @@ nav:
           - Docker installation: get_started/docker_installation.md
           - Manual installation: get_started/openemr_modules.md
           - Documents storage: get_started/documents_storage.md
-          - Internationalization: get_started/Internationalization.md
+          - Internationalization: get_started/internationalization.md
           - Set up a first clinic: get_started/setup_first_clinic.md
     - API:
         - Clinikal: api/clinikal.md
