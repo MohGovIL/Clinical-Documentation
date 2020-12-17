@@ -10,5 +10,9 @@ nav:
     - API refference:
         - Clinikal: api/clinikal.md
         - FHIR: api/fhir.md
+    - Developers guide:
+          - JS libraries: technical_details/client_side_libraries.md
+          - Assets components: technical_details/assets_components.md
+          - Production architecture: technical_details/architecture.md
     - License: license.md
 theme: readthedocs
