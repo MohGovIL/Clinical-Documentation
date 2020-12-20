@@ -23,4 +23,4 @@ Include features (partial list):
     * Diagnosis and recommendations  
 4. Discharged letter  
 5. Prescriptions  
-6. Encounter report  
+6. Encounters report  
