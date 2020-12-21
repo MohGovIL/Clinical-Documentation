@@ -1,7 +1,7 @@
 # FHIR API
 
-All the medical data in the Clinikal application is passed in FHIR standard.  
-We developed a FHIR API layer for connection with Openemr database.  
+All the API calls (that contain medical data) meet FHIR standard.  
+We developed a FHIR API layer for communication with Openemr database.  
 The API is written in [FHIR V4 standard](https://www.hl7.org/fhir/http.html).   
 
 Currently we don't provide full FHIR api, here detailed documentation of all the available calls.  
