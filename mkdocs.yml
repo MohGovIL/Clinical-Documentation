@@ -12,7 +12,6 @@ nav:
     - Developers guide:
           - JS libraries: technical_details/client_side_libraries.md
           - Assets components: technical_details/assets_components.md
-          - Production architecture: technical_details/architecture.md
     - Getting help: getting_help.md
     - License: license.md
 theme: readthedocs

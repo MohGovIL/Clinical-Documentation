@@ -4,4 +4,6 @@ For every Assets component we wrote a storybook file, This tool enables us to re
 
 Every FILE.stories.js complied and add to storybook app.
 
+[Get started from Storybook site](https://storybook.js.org/docs/react/get-started/introduction)
+
 Start with `npm run storybook`

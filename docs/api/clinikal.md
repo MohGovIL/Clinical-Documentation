@@ -1,43 +1,27 @@
 # Clinikal - REST API
 
+For non-medical calls (like settings, forms structures etc.) that the application needs we have developed different API modules.  
 
-##Fhir authorization 
-Get Bearer token
+##Authorization 
+We are using the [OpenEMR Authorization interface](https://github.com/openemr/openemr/blob/master/API_README.md#authorization)
 
-**Request:**
-> POST /apis/fhir/auth
-
-**Body params:**
-```
-{
-    "grant_type":"password",
-    "username": "<USER_NAME>",
-    "password": "<PASSWORD>",
-    "scope":"default"
-}
-```
-
-**Response (example):**
-```
-{
-"token_type":"Bearer",
-"access_token":"d2870cb522230dbb8946b2f47d2c7e6664656661756c74",
-"expires_in":"3600"
-}
-```
 
 
 ##load forms
 
+The encounter sheets can shows a various of forms (from `Components/forms` in the react repository).  
+The setting what form will shown for every service type or reason code is fetched from the API.  
 **Request:**
 > GET  /apis/api/load-forms?service_type=3&reason_code=7
 
-**querystring parametrs **
+**Querystring parameters**
 
-    service-type : integer / null 
+| **parameter**      | **type**      |
+| -------------------------- | -------------- |
+|  service-type                       |   integer / null              |                                                                                       
+| reason-code          | integer / null           |
+
     
-    reason-code  : integer / null
-
 **Response (example):**
 ```
 [
@@ -54,17 +38,20 @@ Get Bearer token
 
 
 
-##Templates for the forms
+##Templates for the form fields
+The templates API provides common sentences for fast form filling.  
 
 **Request:**
 > GET  api/templates/search?service-type=5&reason-code=2&form=7&form-field=recomended_medicine
 
-**querystring parametrs **
+**Querystring parameters**
 
-    service-type : integer not null - the type of the service needed
-    reason-code  : integer not null - the reason code
-    form-field : string not null - the field of the form like recomended_medicine
-    form : string not null - the id of the form
+| **parameter**      | **description**      |
+| -------------------------- | -------------- |
+|  service-type                       |   integer not null - the type of the service needed             |                                                                                       
+| reason-code          | integer not null - the reason code           |
+| form-field          | string not null - the field of the form like recomended_medicine           |
+| form          | string not null - the id of the form           |
 
 **Response (example):**
 ```
@@ -103,7 +90,7 @@ The response contains all the parameters are required for the letter.
 ###Create letter
 
 **Request:**
-> POST  api/letters/:letter_name
+> POST  api/letters/<letter_name>
 
 
 **Body params: (according the requirement)**
