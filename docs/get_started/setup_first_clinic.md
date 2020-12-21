@@ -5,13 +5,22 @@ Clinikal supports working with multiple facilities. before starting you must cre
 How to create clinic:  
 1.Go to **Administration** -> **Clinic** -> **Facilities**   
 Add new Facility:  
-Required parameters -
-* Name
-* Billing Location - true
-* Service locdation - true
-* POS Code - 11:Office
+Required parameters -  
 
-2. Manual step (currently), for Fhir API need to run SQL query in the database:
+| **Field**      | **value**      |
+| -------------------------- | -------------- |
+| Name                       |   any             |                                                                                       
+| Billing Location           | true           |
+| Service Location           | true           |
+| POS Code                   | 11:Office      |
+
+
+2. Manual step (currently), for Fhir API need to run SQL query in the database:  
+Find the id of the facility you just added:
+```
+SELECT id FROM `facility` WHERE name = '<YOUR NAME>';
+```
+Then run this query (replace \<ID OF FACILITY\> with the result from above query)
 ```
 INSERT INTO `fhir_healthcare_services` (`active`, `providedBy`, `category`, `type`, `name`) VALUES (1, <ID OF FACILITY>, 30, 1, <NAME OF FACILITY>);
 ``` 
@@ -28,8 +37,12 @@ How to create HMO:
 Add new Facility:  
 
 Required parameters -
-* Name
-* POS Code - 71:Public Health Clinic
+
+| **Field**                           | **value**                                                                                                                                                                                             |
+| -------------------------------------- | -------------- |
+| Name |           any                                                                                                                                    |
+| POS Code                            | 71:Public Health Clinic |
+
 
 #### Login into Clinikal - Enjoy!!
 ![Screenshot](images/patient_tracking.png) 

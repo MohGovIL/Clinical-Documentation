@@ -1,8 +1,10 @@
 # FHIR API
 
-<https://www.hl7.org/fhir/http.html>
+All the medical data in the Clinikal application is passed in FHIR standard.  
+We developed a FHIR API layer for connection with Openemr database.  
+The API is written in [FHIR V4 standard](https://www.hl7.org/fhir/http.html).   
 
-<br><br><br>
+Currently we don't provide full FHIR api, here detailed documentation of all the available calls.  
 
 ##[Patient](https://www.hl7.org/fhir/patient.html)
 

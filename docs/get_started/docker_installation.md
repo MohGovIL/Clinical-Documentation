@@ -65,6 +65,13 @@ To access the api or the  community’s openemr frontend, use backend.DOMAIN_NAM
 ## Developers tools
 Using [clinikal-devops](https://github.com/israeli-moh/clinikal-devops) repository you can setup local environment base on docker for development easily.
 
+**Additional requirements** (in addition to the above)  
+Make sure you have installed on your machine:  
+* git 
+* php
+* composer
+* npm
+
 1. Clone the repository from github.
 2. **Configuration**<br>
 There are 2 configuration files relevant to an installation/upgrade:<br>
@@ -84,7 +91,7 @@ The following is a table explaining each configuration option in sample.containe
 | HOST\_CODEBASE\_PATH                         | In development the code-base is downloaded on the host machine. This is the absolute path on the host machine where the code-base will be downloaded.                                                                                                                                         |
 | OPENEMR\_BRANCH                              | Branch of [openemr](https://github.com/openemr/openemr) repository to download                                                                                                                                                                                                                                                      |
 | GENERIC\_BRANCH                              | Branch of [clinikal-backend](https://github.com/israeli-moh/clinikal-backend) repository to download                                                                                                                                                                                                                                             |
-| VERTICAL\_BRANCH                             | Branch of the chosen vertical repository to download (e.g. [vertical-emergency-medicine-backend](https://github.com/israeli-moh/https://github.com/israeli-moh/vertical-emergency-medicine-backend))                                                                                                                                                                                                                                         |
+| VERTICAL\_BRANCH                             | Branch of the chosen vertical repository to download (e.g. [vertical-emergency-medicine-backend](github.com/israeli-moh/vertical-emergency-medicine-backend))                                                                                                                                                                                                                                         |
 | CLIENT\_APP\_BRANCH                          | Branch of the [client application](https://github.com/israeli-moh/clinikal-react) repository to download                                                                                                                                                                                                                                       |
 | DEVELOPER\_NAME                              | put in your name. This will be part of the path in S3 and distinguish between different devs                                                                                                                                                                                                  |
 

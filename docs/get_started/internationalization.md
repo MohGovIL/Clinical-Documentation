@@ -24,7 +24,3 @@ Can be changed in **Administration** -> **Globals** -> **Locale**
 The system is initialized with a list of identifier types is used in Israel.  
 The list can be changed in **Administration** -> **Forms** -> **Lists** -> **User Defined List 3** 
 
-**HMOs**
-Every patient must be a member of the HMO.   
- 
-  
