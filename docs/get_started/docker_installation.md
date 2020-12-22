@@ -3,8 +3,8 @@ We have set of docker images that compose all the repositories to whole project,
 
 ## Requirements
 * [Docker installed](https://docs.docker.com/install/)
-* Mariadb/Mysql
-* Couchdb/AWS S3 for documents storage    
+* Mariadb (10.4+)/Mysql(8.0+)
+* CouchDB(1.6.0)/AWS S3 for documents storage    
 
 
 Every type of clinic is built from different Docker image.  
@@ -68,9 +68,9 @@ Using [clinikal-devops](https://github.com/israeli-moh/clinikal-devops) reposito
 **Additional requirements** (in addition to the above)  
 Make sure you have installed on your machine:  
 * git 
-* php
-* composer
-* npm
+* php(7.3+)
+* composer(v1.9.3)
+* npm(6.0.0+)
 
 1. Clone the repository from github.
 2. **Configuration**<br>
