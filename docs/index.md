@@ -3,7 +3,7 @@
 ### Overview
 Clinikal is a Electric Medical Records application.  
 Clinical offers a new experience of administrative and medical management for variety of clinics.  
-The foundation of the application is the popular open source [OpenEMR](https://github.com/openemr/openemr), we developed new layer of Fhir API base on Zend Framework modules and new and modern React.js application to enjoy from wonderful user experience.  
+The foundation of the application is the popular open source [OpenEMR](https://github.com/openemr/openemr), we developed new layer of Fhir API base on Zend Framework modules and new and modern React.js application for an improved user experience.  
 Clinikal continues to use OpenEMR interfaces as Content Management System for manage users, permissions, lists etc. (we doesn't supply full integration between old data from Openemr screens to Clinikal interfaces) 
 
 The principle that guides us is **clean and clear**.  
