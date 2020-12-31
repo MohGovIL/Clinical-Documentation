@@ -9,6 +9,7 @@ nav:
     - API refference:
         - FHIR: api/fhir.md
         - Clinikal: api/clinikal.md
+    - Product description: product_desc/product_desc.md
     - Developers guide:
           - JS libraries: technical_details/client_side_libraries.md
           - Assets components: technical_details/assets_components.md
