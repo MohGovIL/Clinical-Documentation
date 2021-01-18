@@ -21,6 +21,7 @@ _Base controller_ - `GenericTools\Controller\BaseController` - the BaseControlle
 **Models**  
 We supply set of Models and Table gateways for database connection according to [laminas-db](https://docs.laminas.dev/laminas-db/) principles.  
 Most table gateways using trait `\GenericTools\Model\baseTable` for creating complex queries clearly and quickly.  
+
 **List of available models:** (GenericTools/src/GenericTools/Model)  
 AclTables  
 Documents  
@@ -37,6 +38,7 @@ And more...
 
 ###Serivces
 The following powerful services enable us quick integration with several useful tools.   
+
 **Pdf**  
 Generate PDF file, render html for pdf using [Laminas Rendering Views](https://docs.laminas.dev/laminas-view/php-renderer/).  
 usage example:  
@@ -134,7 +136,8 @@ For example you can take a look on the Encounetrs report in the [vertical-emerge
 ###Import data
 The [import data](https://github.com/israeli-moh/clinikal-backend/tree/develop/modules/ImportData) tool helps you to import lists into the database from CSV files with minimum configuration.
 The mechanism enables to import to list_options table or codes table.
-We have [set of lists](https://github.com/israeli-moh/clinikal-backend/tree/develop/modules/ImportData/src/ImportData/Lists) already mapped in to the database, and you can add additional lists as you needed.  
+We have [set of lists](https://github.com/israeli-moh/clinikal-backend/tree/develop/modules/ImportData/src/ImportData/Lists) already mapped in to the database, and you can add additional lists as you needed.
+
 **What do you need to mapping a new list?**  
 1. CSV file with your records, the separator between the columns must be | (pipe).  
 2. Create a new list class that extends BaseList implements InterfaceList.  
