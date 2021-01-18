@@ -1,10 +1,13 @@
 ## Backend  - start development
 
 The backend code contains a set of utilities that extend the OpenEMR code and enable us to develop new features quickly.  
-All the utilities found in the [clinikal-backed]() repository and divided into different ZF modules  according to the scope.  
-* _Generic-tools_ - contains some services, contollers, models and helper are in used in several modules.  
-* _Cliikal-api_ - contains utilities are needed for the backend of React project.  
-* _Fhir-api_ - contains models, contlllers and services for Fhir API.  
+All the utilities found in the [clinikal-backed]() repository and divided into different ZF modules  according to the scope.
+
+*  _Generic-tools_ - contains some services, contollers, models and helper are in used in several modules.
+  
+*  _Cliikal-api_ - contains utilities are needed for the backend of React project.
+  
+*  _Fhir-api_ - contains models, contlllers and services for Fhir API.
 
 In this document we review the main utilities you can find in the Generic-tools modules, we hope it gives you a good starting point to start a new development.  
 
@@ -107,8 +110,9 @@ $excelService->downloadFile();
 
 ###Report tool
 The [ReportTool](https://github.com/israeli-moh/clinikal-backend/tree/develop/modules/ReportTool) module contains infrastructure for generate reports, the reports tool supply UI with pagination, print report as PDF and export the report to excel file.  
+
 **How to adding a new report?**  
-Every report need - 
+Every report need -   
 1. new class extends the `ReportTool\Controller\BaseController` and implements ReportInterface    
    ```
    class ReportContrller extends ReportBase implements ReportInterface
@@ -119,10 +123,13 @@ Every report need -
 
 The report will show in the OpenEMR interface and not in the React view.  
 
-For example you can take a look on the Encounetrs report in the [vertical-emergency-medicine-backend repository](https://github.com/israeli-moh/vertical-emergency-medicine-backend)  
-* [Controller](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/src/EmergencyMedicine/Controller/EncounterReportContrller.php)  
-* [Stored Procedure](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/sql/install.sql#L321)  
-* [Routing](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/config/module.config.php#L71) and [Menu](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/menus/clinikal-emergency.json#L1318)  
+For example you can take a look on the Encounetrs report in the [vertical-emergency-medicine-backend repository](https://github.com/israeli-moh/vertical-emergency-medicine-backend)
+
+*  [Controller](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/src/EmergencyMedicine/Controller/EncounterReportContrller.php)
+   
+*  [Stored Procedure](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/sql/install.sql#L321)
+   
+*  [Routing](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/modules/EmergencyMedicine/config/module.config.php#L71) and [Menu](https://github.com/israeli-moh/vertical-emergency-medicine-backend/blob/develop/menus/clinikal-emergency.json#L1318)  
 
 ###Import data
 The [import data](https://github.com/israeli-moh/clinikal-backend/tree/develop/modules/ImportData) tool helps you to import lists into the database from CSV files with minimum configuration.
