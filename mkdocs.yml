@@ -10,13 +10,8 @@ nav:
         - FHIR: api/fhir.md
         - Clinikal: api/clinikal.md
     - Developers guide:
-        - Backend:
-          - Backend utilities: technical_details/backend_utilities.md
-          - Modules upgrade: technical_details/upgrade_sql.md
-          - ACL managing: technical_details/client_side_libraries.md
-        - Frontend:
-          - JS libraries: technical_details/client_side_libraries.md
-          - Assets components: technical_details/assets_components.md
+        - Backend: technical_details/backend_utilities.md
+        - Frontend: technical_details/client_side_libraries.md
     - Product description: product_desc/product_desc.md
     - Getting help: getting_help.md
     - License: license.md
